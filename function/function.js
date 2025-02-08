@@ -57,11 +57,11 @@ async function ReadMessage(e) {
  * 解析配置文件
  * @param {*} file 配置文件夹
  * @param {*} name 配置文件名
- * @returns 
+ * @returns
  */
 function GetConfig(file, name) {
-  let cfgyaml = `${_PATH}/plugins/${PluginName_en}/${file}/${name}.yaml`
-  const configData = fs.readFileSync(cfgyaml, 'utf8');
+  let cfgyaml = `${_PATH}/plugins/${PluginName_en}/${file}/${name}.yaml`;
+  const configData = fs.readFileSync(cfgyaml, "utf8");
   let config = yaml.parse(configData);
   return { config };
 }

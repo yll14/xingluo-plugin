@@ -9,8 +9,8 @@ import {
 const { config } = GetConfig(`config`, `updatetask`);
 const prefix = "bubble:codeUpdateTask:";
 let REPOSITORY_LIST = [];
-const repositories = config.customRepository.split(',')
-const CUSTOM_REPOSITORY = repositories
+const repositories = config.customRepository.split(",");
+const CUSTOM_REPOSITORY = repositories;
 init();
 
 export class UpdateTask extends plugin {
@@ -27,9 +27,7 @@ export class UpdateTask extends plugin {
       ],
     });
     this.task = {
-      //如果要更改定时检查更新时间，请修改下面的cron表达式 默认每天0点执行 
-      //cron表达式不知道怎么写前往<https://cron.qqe2.com/>或者<https://www.jyshare.com/front-end/9444/>获取帮助
-      cron: "0 0 * * * ?", 
+      cron: config.cron,
       name: `${PluginName_en}定时检查更新`,
       log: false,
       fnc: () => this.UpdateTask(),
