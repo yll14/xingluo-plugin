@@ -7,3 +7,4 @@ config/
 #*~
 # 排除目录下的文件
 apps/test.js
+apps/a.js

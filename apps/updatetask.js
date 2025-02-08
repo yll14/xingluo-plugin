@@ -9,8 +9,8 @@ import {
 const { config } = GetConfig(`config`, `updatetask`);
 const prefix = "bubble:codeUpdateTask:";
 let REPOSITORY_LIST = [];
-const CUSTOM_REPOSITORY = config.customRepository.split(',').map(url => url.trim());
-
+const repositories = config.customRepository.split(',')
+const CUSTOM_REPOSITORY = repositories
 init();
 
 export class UpdateTask extends plugin {
