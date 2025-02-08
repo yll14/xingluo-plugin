@@ -21,7 +21,7 @@ export function supportGuoba() {
 
       iconColor: "#d19f56",
 
-      iconPath: path.join(__dirname, "resources/logo.gif"),
+      iconPath: path.join(__dirname, "resources/svg.svg"),
     },
     configInfo: {
       schemas: [
