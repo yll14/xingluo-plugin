@@ -1,34 +1,34 @@
-import { PluginName_zh } from "../function/function.js";
-import { update as Update } from "../../other/update.js";
+import { PluginName_zh } from '../fun'
+import { update as Update } from '../../other/update.js'
 export class luoluoupdate extends plugin {
-  constructor() {
+  constructor () {
     super({
-      name: "洛洛插件更新",
-      event: "message",
+      name:  `${PluginName_zh}更新`,
+      event: 'message',
       priority: 1000,
       rule: [
         {
           reg: /^#?(xl|星落|xingluo)(插件)?(强制)?更新$/i,
-          fnc: "update",
+          fnc: 'update'
         },
         {
           reg: /^#?(xl|星落|xingluo)(插件)?更新日志$/i,
-          fnc: "updateLog",
-        },
-      ],
-    });
+          fnc: 'updateLog'
+        }
+      ]
+    })
   }
 
-  async update(e = this.e) {
-    const Type = e.msg.includes("强制") ? "#强制更新" : "#更新"
+  async update (e = this.e) {
+    const Type = e.msg.includes('强制') ? '#强制更新' : '#更新'
     e.msg = Type + PluginName_zh
     const up = new Update(e)
     up.e = e
     return up.update()
   }
 
-  async updateLog(e = this.e) {
-    e.msg = "#更新日志" + PluginName_zh
+  async updateLog (e = this.e) {
+    e.msg = '#更新日志' + PluginName_zh
     const up = new Update(e)
     up.e = e
     return up.updateLog()
