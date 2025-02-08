@@ -7,6 +7,7 @@ import {
   PluginName_zh,
 } from "../function/function.js";
 const { config } = GetConfig(`config`, `updatetask`);
+let cron = `${config.cron}`;
 const prefix = "bubble:codeUpdateTask:";
 let REPOSITORY_LIST = [];
 const CUSTOM_REPOSITORY = [`https://gitee.com/yll0614/${PluginName_en}`];
@@ -27,7 +28,7 @@ export class UpdateTask extends plugin {
       ],
     });
     this.task = {
-      cron: this.GetConfig('cron') || '0 0 * * * ?',
+      cron: cron, //|| "0 0 * * * ?"
       name: `${PluginName_en}定时检查更新`,
       log: false,
       fnc: () => this.UpdateTask(),
