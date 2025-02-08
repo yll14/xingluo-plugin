@@ -8,11 +8,11 @@ export class luoluoupdate extends plugin {
       priority: 1000,
       rule: [
         {
-          reg: /^[#/!]?(xl|星落|xingluo)(插件)?(强制)?更新$/i,
+          reg: /^#?(xl|星落|xingluo)(插件)?(强制)?更新$/i,
           fnc: "update",
         },
         {
-          reg: /^[#/!]?(xl|星落|xingluo)(插件)?更新日志$/i,
+          reg: /^#?(xl|星落|xingluo)(插件)?更新日志$/i,
           fnc: "updateLog",
         },
       ],
@@ -20,17 +20,17 @@ export class luoluoupdate extends plugin {
   }
 
   async update(e = this.e) {
-    const Type = e.msg.includes("强制") ? "#强制更新" : "#更新";
-    e.msg = Type + PluginName_zh;
-    const up = new Update(e);
-    up.e = e;
-    return up.update();
+    const Type = e.msg.includes("强制") ? "#强制更新" : "#更新"
+    e.msg = Type + PluginName_zh
+    const up = new Update(e)
+    up.e = e
+    return up.update()
   }
 
   async updateLog(e = this.e) {
-    e.msg = "#更新日志" + PluginName_zh;
-    const up = new Update(e);
-    up.e = e;
-    return up.updateLog();
+    e.msg = "#更新日志" + PluginName_zh
+    const up = new Update(e)
+    up.e = e
+    return up.updateLog()
   }
 }
