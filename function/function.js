@@ -122,7 +122,6 @@ function ReturnInformation(Data, e) {
 
 export {
   _PATH,
-  Author,
   PluginName_zh,
   PluginName_en,
   PluginPath,
