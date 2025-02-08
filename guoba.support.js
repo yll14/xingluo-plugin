@@ -1,10 +1,11 @@
-import setting from "./components/settings.js";
+import setting from "./function/setting.js";
 import lodash from "lodash";
+
 export function supportGuoba() {
     return {
         pluginInfo: {
-            name: `xingluo-plugin`,
-            title: `星落插件(xingluo-plugin)`,
+            name: `${PluginName_en}`,
+            title: `${PluginName_zh}(${PluginName_en})`,
             author: author,
             authorLink: 'https://gitee.com/yll14/',
             link: 'https://gitee.com/yll14/xingluo-plugin',
