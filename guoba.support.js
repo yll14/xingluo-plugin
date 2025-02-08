@@ -1,16 +1,6 @@
-import path from 'path'
-import fs from 'fs'
-import yaml from 'yaml'
-import lodash from 'lodash'
 import setting from "./components/settings.js";
+import lodash from "lodash";
 import { PluginPath, PluginName_en, PluginName_zh } from './function/function.js'
-function getconfig(name) {
-    let cfgyaml = `${PluginPath}/config/${name}.yaml`
-    const configData = fs.readFileSync(cfgyaml, 'utf8')
-    let config = yaml.parse(configData)
-    return { config }
-}
-
 export function supportGuoba() {
     return {
         pluginInfo: {
