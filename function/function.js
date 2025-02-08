@@ -104,17 +104,6 @@ async function image(e, file, name, obj) {
 }
 
 /**
- * 获取插件作者
- * @returns
- */
-async function Author() {
-  let PluginAuthor = JSON.parse(
-    fs.readFileSync(`./plugins/${PluginName_en}/package.json`, `utf-8`),
-  );
-  return PluginAuthor.author;
-}
-
-/**
  * 返回错误信息
  * @param {*} Data
  * @param {*} e

@@ -8,11 +8,11 @@ export class luoluoupdate extends plugin {
       priority: 1000,
       rule: [
         {
-          reg: /^#?(ll|洛洛|luoluo)(插件)?(强制)?更新$/i,
+          reg: /^[#/!]?(xl|星落|xingluo)(插件)?(强制)?更新$/i,
           fnc: "update",
         },
         {
-          reg: /^#?(ll|洛洛|luoluo)(插件)?更新日志$/i,
+          reg: /^[#/!]?(xl|星落|xingluo)(插件)?更新日志$/i,
           fnc: "updateLog",
         },
       ],

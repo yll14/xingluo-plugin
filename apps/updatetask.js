@@ -21,7 +21,7 @@ export class UpdateTask extends plugin {
       priority: 1000,
       rule: [
         {
-          reg: /^#?(ll|洛洛|洛洛|luoluo)(插件)?检查更新$/i,
+          reg: /^[#/!]?(xl|星落|xingluo)(插件)?检查更新$/i,
           fnc: "UpdateTask",
         },
       ],

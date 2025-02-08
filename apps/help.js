@@ -16,7 +16,7 @@ export class example2 extends plugin {
       priority: 500,
       rule: [
         {
-          reg: "^(#|/)?(Gi|互动|群互动|gI|GI|gi)(帮助|菜单|help|功能|说明|指令|使用说明|命令)$",
+          reg: /^[#/!]?(xl|星落|xingluo)(插件)?(帮助|菜单|help|功能|说明|指令|使用说明|命令)$/i,
           fnc: "help",
         },
       ],

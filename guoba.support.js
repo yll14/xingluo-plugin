@@ -11,12 +11,12 @@ export function supportGuoba() {
     pluginInfo: {
       name: `${PluginName_en}`,
       title: `${PluginName_zh}(${PluginName_en})`,
-      author: Author(),
+      author: "洛洛",
       authorLink: "https://gitee.com/yll14/",
       link: "https://gitee.com/yll14/xingluo-plugin",
       isV3: true,
       isV2: false,
-      description: `luoluo-plugin的重构版本`,
+      description: `洛洛插件的重构版本`,
       icon: "mdi:stove",
 
       iconColor: "#d19f56",
