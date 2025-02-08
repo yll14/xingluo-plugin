@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 import { dirname } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-import { PluginName_en, PluginName_zh, Author } from "./function/function.js";
+import { PluginName_en, PluginName_zh } from "./function/function.js";
 export function supportGuoba() {
   return {
     pluginInfo: {
