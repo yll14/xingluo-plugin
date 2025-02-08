@@ -27,7 +27,7 @@ export class UpdateTask extends plugin {
       ],
     });
     this.task = {
-      cron: config.cron,
+      cron: `${config.cron}`,
       name: `${PluginName_en}定时检查更新`,
       log: false,
       fnc: () => this.UpdateTask(),

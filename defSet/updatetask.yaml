@@ -1,4 +1,4 @@
 #开关 true 开启 false 关闭
 switch : true
 #cron表达式 不知道怎么写前往<https://cron.qqe2.com/>或者<https://www.jyshare.com/front-end/9444/>获取帮助
-cron : '0 0 * * * ?'
+cron : 0 0 * * * ?
