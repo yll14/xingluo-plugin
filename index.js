@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import Init from './init/init.js'
-import { _PATH, PluginName_en, PluginName_zh } from '../function/function.js'
+import { _PATH, PluginName_en, PluginName_zh } from './function/function.js'
 
 let initMsg = await Init.init()
 if(!initMsg.boolean) {
