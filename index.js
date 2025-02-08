@@ -43,6 +43,6 @@ for (let i in files) {
 }
 logger.info(`---------ヾ(✿ﾟ▽ﾟ)ノ---------`);
 logger.info(`${PluginName_zh}载入成功！`);
-logger.info(`Created By ${Author()}`);
+logger.info(`Created By 洛洛`);
 logger.info(`-----------------------------`);
 export { apps };
