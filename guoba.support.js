@@ -1,6 +1,6 @@
 import setting from "./components/settings.js";
 import lodash from "lodash";
-import { PluginPath, PluginName_en, PluginName_zh } from './function/function.js'
+import {  PluginName_en, PluginName_zh } from './function/function.js'
 export function supportGuoba() {
     return {
         pluginInfo: {
