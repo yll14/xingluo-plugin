@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 import cfg from '../../../lib/config/config.js'
 import moment from 'moment'
 import { GetConfig, PluginName_en, PluginName_zh } from '../function/function.js'
-const { config } = GetConfig(`config`, `updateask`)
+const { config } = GetConfig(`config`, `updatetask`)
 const prefix = 'bubble:codeUpdateTask:'
 let REPOSITORY_LIST = []
 const CUSTOM_REPOSITORY = [`https://gitee.com/yll0614/${PluginName_en}`]
