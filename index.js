@@ -38,6 +38,6 @@ for (let i in files) {
 }
 logger.info(`---------ヾ(✿ﾟ▽ﾟ)ノ---------`)
 logger.info(`${PluginName_zh}载入成功！`)
-logger.info(`Created By ${globalAuthor}`)
+logger.info(`Created By ${PluginAuthor}`)
 logger.info(`-----------------------------`)
 export { apps }
