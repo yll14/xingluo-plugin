@@ -1,4 +1,4 @@
-import { PluginName_zh } from '../fun'
+import { PluginName_zh } from '../function/function.js'
 import { update as Update } from '../../other/update.js'
 export class luoluoupdate extends plugin {
   constructor () {
