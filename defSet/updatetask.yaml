@@ -1,4 +1,4 @@
 #开关 true 开启 false 关闭
 switch : true
 #自定义仓库 支持多个地址，使用英文逗号分隔
-customRepository : 'https://gitee.com/yll14/xingluo-plugin,https://gitee.com/other-user/other-repo'
+customRepository : 'https://gitee.com/yll14/xingluo-plugin,https://gitee.com/yhArcadia/Yunzai-Bot-plugins-index'
