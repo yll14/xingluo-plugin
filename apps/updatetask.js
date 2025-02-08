@@ -6,6 +6,7 @@ import {
   PluginName_en,
   PluginName_zh,
 } from "../function/function.js";
+const { config } = GetConfig(`config`, `updatetask`);
 const prefix = "bubble:codeUpdateTask:";
 let REPOSITORY_LIST = [];
 const CUSTOM_REPOSITORY = [`https://gitee.com/yll0614/${PluginName_en}`];
