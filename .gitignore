@@ -1,0 +1,9 @@
+# 排除特定目录及其内容
+node_modules/
+config/
+# 排除所有的 .log 文件
+#*.log
+# 排除所有的临时文件
+#*~
+# 排除目录下的文件
+apps/test.js
