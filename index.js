@@ -4,7 +4,6 @@ import {
   _PATH,
   PluginName_en,
   PluginName_zh,
-  Author,
 } from "./function/function.js";
 
 let initMsg = await Init.init();
