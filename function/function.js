@@ -112,8 +112,7 @@ async function Author() {
   let PluginAuthor = JSON.parse(
     fs.readFileSync(`./plugins/${PluginName_en}/package.json`, `utf-8`),
   );
-  PluginAuthor = PluginAuthor.author;
-  return PluginAuthor;
+  return PluginAuthor.author;
 }
 
 /**
