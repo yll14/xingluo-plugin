@@ -1,7 +1,7 @@
 <div align="center">
 <h1>洛洛插件V7.0.0(xingluo-plugin)正在开发ing...</h1>
 
- ## 插件功能 [v7.0.0]
+ ## 插件功能
  </div>
 
 # 功能命令与描述
