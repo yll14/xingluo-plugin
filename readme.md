@@ -32,9 +32,8 @@ git clone --depth=1 https://mirror.ghproxy.com/https://github.com/yll14/xingluo-
 git clone --depth=1 https://ghproxy.net/https://github.com/yll14/xingluo-plugin.git ./plugins/xingluo-plugin/
 ```
 ### 方式二:手动下载插件
-下载仓库解压zip文件将xingluo-plugin-main放入Yunzai/Miao-Yunzai的/plugins目录下重命名去掉后面的<u>-main</u>
-
-<img src='   '  alt='Download-xingluo-plugin.png'></img>
+下载仓库解压zip文件将xingluo-plugin-master放入Yunzai/Miao-Yunzai的/plugins目录下重命名去掉后面的<u>-master</u>
+<img src='https://img.yll14.cn/i/2025/02/08/67a70020961d4.png'  alt='Download-xingluo-plugin.png'></img>
 </div>
 
 ### 安装依赖 一定要安装依赖!!!
