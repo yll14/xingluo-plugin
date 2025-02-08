@@ -46,7 +46,7 @@ export function supportGuoba() {
           field: "updatetask.cron",
           label: "定时任务表达式",
           helpMessage: "设置自动更新检查的时间",
-          bottomHelpMessage: "默认：0 0 * * * ?（每天0点执行）",
+          bottomHelpMessage: "默认：0 0 * * * ?（每天0点执行） 不知道怎么写前往<https://www.jyshare.com/front-end/9444/>获取帮助",
           component: "Input",
           required: true,
           componentProps: {
