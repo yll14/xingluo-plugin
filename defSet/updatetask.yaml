@@ -1,4 +1,4 @@
 #开关 true 开启 false 关闭
 switch : true
-#cron表达式 不知道怎么写前往<https://cron.qqe2.com/>或者<https://www.jyshare.com/front-end/9444/>获取帮助
-cron : '0 0 * * * ?'
+#自定义仓库 支持多个地址，使用英文逗号分隔
+customRepository : 'https://gitee.com/yll14/xingluo-plugin,https://gitee.com/other-user/other-repo'

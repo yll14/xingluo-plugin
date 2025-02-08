@@ -32,16 +32,14 @@ export function supportGuoba() {
           component: "Switch",
         },
         {
-          field: "updatetask.cron",
-          label: "定时检查更新时间",
-          helpMessage:
-            "不会cron表达式？前往<https://cron.qqe2.com/>或者<https://www.jyshare.com/front-end/9444/>获取帮助)",
-          bottomHelpMessage:
-            "填入cron表达式，该项保存后重启生效(格式错了定时检查更新就寄啦)",
+          field: "updatetask.customRepository",
+          label: "自定义仓库地址",
+          helpMessage: "支持添加多个仓库地址，使用英文逗号分隔",
+          bottomHelpMessage: "格式：https://gitee.com/用户名/仓库名",
           component: "Input",
           required: true,
           componentProps: {
-            placeholder: "请输入cron表达式",
+            placeholder: "请输入Gitee仓库地址，多个地址用英文逗号分隔",
           },
         },
       ],

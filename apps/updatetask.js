@@ -9,7 +9,9 @@ import {
 const { config } = GetConfig(`config`, `updatetask`);
 const prefix = "bubble:codeUpdateTask:";
 let REPOSITORY_LIST = [];
-const CUSTOM_REPOSITORY = [`https://gitee.com/yll0614/${PluginName_en}`];
+const CUSTOM_REPOSITORY = Array.isArray(config.customRepository) 
+  ? config.customRepository 
+  : config.customRepository.split(',').map(url => url.trim());
 
 init();
 
@@ -27,7 +29,9 @@ export class UpdateTask extends plugin {
       ],
     });
     this.task = {
-      cron: `${GetConfig(`config`, `updatetask`).config.cron}`, //|| "0 0 * * * ?"
+      //如果要更改定时检查更新时间，请修改下面的cron表达式 默认每天0点执行 
+      //cron表达式不知道怎么写前往<https://cron.qqe2.com/>或者<https://www.jyshare.com/front-end/9444/>获取帮助
+      cron: "0 0 * * * ?", 
       name: `${PluginName_en}定时检查更新`,
       log: false,
       fnc: () => this.UpdateTask(),
@@ -77,7 +81,7 @@ export class UpdateTask extends plugin {
 
     if (content.length > 0) {
       const msg =
-        `检测到${PluginName_zh}更新...\n` +
+        `检测到项目更新...\n` +
         content
           .map(
             (i) =>
