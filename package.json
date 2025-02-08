@@ -7,17 +7,8 @@
     "scripts": {
       "fix": "npx prettier --write **/*.js && npx prettier --write *.js"
     },
-    "repository": {
-      "type": "git",
-      "url": "https://gitee.com/yll14/xingluo-plugin"
-    },
     "dependencies": {
     },
-    "keywords": [
-      "Yunzai",
-      "Miao-Yunzai",
-      "plugin"
-    ],
     "author": "洛洛",
     "license": "MIT"
   }

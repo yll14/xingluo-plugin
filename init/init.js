@@ -34,13 +34,14 @@ export default new class Init {
             const updatedConfigYAML = yaml.stringify(config);
             fs.writeFileSync(configFilePath, updatedConfigYAML, 'utf8');
         }
-        /*
-        const pokeFilePath = `${configFolder}/poke.yaml`
-        const defPokeFilePath = `${defSetFolder}/poke.yaml`
-        if (!fs.existsSync(pokeFilePath)) {
-          fs.copyFileSync(defPokeFilePath, pokeFilePath);
-        }
         
+        const updatetaskFilePath = `${configFolder}/updatetask.yaml`
+        const defUpdatetaskFilePath = `${defSetFolder}/updatetask.yaml`
+        if (!fs.existsSync(updatetaskFilePath)) {
+          fs.copyFileSync(defUpdatetaskFilePath, updatetaskFilePath);
+        }
+
+        /*
         if(!fs.existsSync(`./plugins/${PluginName_en}/config/fishText.yaml`)) {
           fs.copyFileSync(`./plugins/${PluginName_en}/defSet/fishText.yaml`, `./plugins/${PluginName_en}/config/fishText.yaml`)
         } else {
