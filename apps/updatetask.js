@@ -13,7 +13,7 @@ const repositories = config.customRepository.split(",");
 const CUSTOM_REPOSITORY = repositories;
 init();
 
-export class UpdateTask extends plugin {
+export class xingluoUpdateTask extends plugin {
   constructor() {
     super({
       name: `${PluginName_zh}检查更新`,

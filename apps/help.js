@@ -5,9 +5,8 @@ import {
   PluginName_zh,
   image,
 } from "../function/function.js";
-import cfg from "../../../lib/config/config.js";
 
-export class example2 extends plugin {
+export class xingluohelp extends plugin {
   constructor() {
     super({
       name: `${PluginName_zh}:帮助`,
