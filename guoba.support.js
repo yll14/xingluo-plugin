@@ -35,7 +35,8 @@ export function supportGuoba() {
           field: "updatetask.customRepository",
           label: "自定义仓库地址",
           helpMessage: "支持添加多个仓库地址，使用英文逗号分隔",
-          bottomHelpMessage: "格式：https://gitee.com/用户名/仓库名,https://gitee.com/用户名/仓库名",
+          bottomHelpMessage:
+            "格式：https://gitee.com/用户名/仓库名,https://gitee.com/用户名/仓库名",
           component: "Input",
           required: true,
           componentProps: {
@@ -46,11 +47,13 @@ export function supportGuoba() {
           field: "updatetask.cron",
           label: "定时任务表达式",
           helpMessage: "设置自动更新检查的时间",
-          bottomHelpMessage: "默认：0 0 * * * ?（每天0点执行） 不知道怎么写前往<https://www.jyshare.com/front-end/9444/>获取帮助",
+          bottomHelpMessage:
+            "默认：0 0 * * * ?（每天0点执行） 不知道怎么写前往<https://www.jyshare.com/front-end/9444/>获取帮助",
           component: "Input",
           required: true,
           componentProps: {
-            placeholder: "请输入cron表达式 不知道怎么写前往<https://www.jyshare.com/front-end/9444/>获取帮助",
+            placeholder:
+              "请输入cron表达式 不知道怎么写前往<https://www.jyshare.com/front-end/9444/>获取帮助",
           },
         },
       ],
