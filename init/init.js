@@ -44,7 +44,6 @@ export default new (class Init {
     if (!fs.existsSync(hitokotoFilePath)) {
       fs.copyFileSync(defHitokotoFilePath, hitokotoFilePath);
     }
-    
 
     /*
         if(!fs.existsSync(`./plugins/${PluginName_en}/config/fishText.yaml`)) {

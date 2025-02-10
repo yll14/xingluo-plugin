@@ -14,13 +14,12 @@ export function supportGuoba() {
       author: "洛洛",
       authorLink: "https://gitee.com/yll14/",
       link: "https://gitee.com/yll14/xingluo-plugin",
+      showInMenu: "auto",
       isV3: true,
       isV2: false,
       description: `洛洛插件的重构版本`,
       icon: "mdi:stove",
-
       iconColor: "#d19f56",
-
       iconPath: path.join(__dirname, "resources/svg.svg"),
     },
     configInfo: {
@@ -54,6 +53,55 @@ export function supportGuoba() {
           componentProps: {
             placeholder:
               "请输入cron表达式 不知道怎么写前往<https://www.jyshare.com/front-end/9444/>获取帮助",
+          },
+        },
+        {
+          field: "Hitokoto.switch",
+          label: "功能开关",
+          bottomHelpMessage: "是否开启",
+          component: "Switch",
+        },
+        {
+          field: "Hitokoto.api",
+          label: "一言API",
+          helpMessage: "输入一言API",
+          bottomHelpMessage:
+            "输入一言API!!!注意检查返回格式是否一致!!! 默认https://v1.hitokoto.cn/",
+          component: "Input",
+          required: true,
+          componentProps: {
+            placeholder: "请输入一言API",
+          },
+        },
+        {
+          field: "Hitokoto.Type",
+          label: "一言返回类型",
+          bottomHelpMessage: "选择一言返回类型",
+          component: "Select",
+          componentProps: {
+            options: [
+              {
+                label: "纯文本(不带任何格式)",
+                value: "text",
+              },
+              {
+                label: "JSON(格式化好后的文本)",
+                value: "json",
+              },
+            ],
+          },
+        },
+        {
+          field: "Hitokoto.sentenceType",
+          label: "一言类型",
+          helpMessage: "输入一言类型",
+          bottomHelpMessage:
+            "可选 a:动画 b:漫画 c:游戏 d:文学 e:原创 f:来自网络 g:其他 h:影视 i:诗词 j:网易云 k:哲学 l:抖机灵",
+          component: "Input",
+          required: false,
+          componentProps: {
+            placeholder:
+              "请输入一言类型，选择多种类型使用英文逗号连接例如`a,b,c`",
           },
         },
       ],
