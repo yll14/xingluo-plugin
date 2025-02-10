@@ -39,6 +39,12 @@ export default new (class Init {
     if (!fs.existsSync(updatetaskFilePath)) {
       fs.copyFileSync(defUpdatetaskFilePath, updatetaskFilePath);
     }
+    const hitokotoFilePath = `${configFolder}/Hitokoto.yaml`;
+    const defHitokotoFilePath = `${defSetFolder}/Hitokoto.yaml`;
+    if (!fs.existsSync(hitokotoFilePath)) {
+      fs.copyFileSync(defHitokotoFilePath, hitokotoFilePath);
+    }
+    
 
     /*
         if(!fs.existsSync(`./plugins/${PluginName_en}/config/fishText.yaml`)) {

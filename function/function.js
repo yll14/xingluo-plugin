@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 import yaml from "yaml";
 import fs from "fs";
 const _PATH = process.cwd().replace(/\\/g, "/");
-const PluginName_zh = "星洛插件";
+const PluginName_zh = "星落插件";
 const PluginName_en = "xingluo-plugin";
 const PluginPath = `${_PATH}/plugins/${PluginName_en}`;
 import puppeteer from "../../../lib/puppeteer/puppeteer.js";

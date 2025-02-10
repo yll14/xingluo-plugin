@@ -1,0 +1,12 @@
+#开关 true 开启 false 关闭
+switch: true
+#API地址
+api: https://v1.hitokoto.cn/
+#API类型
+#可选 text 纯文本 或 json
+Type: json
+#句子类型  默认为空 选择多种使用&c=连接例如`a&c=b&c=c`
+
+#可选 a:动画 b:漫画 c:游戏 d:文学 e:原创 f:来自网络 g:其他 h:影视 i:诗词 j:网易云 k:哲学 l:抖机灵
+sentenceType: ''
+
