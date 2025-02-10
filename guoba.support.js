@@ -151,7 +151,7 @@ export function supportGuoba() {
         }
         config = lodash.merge({}, setting.merge, config);
         setting.analysis(config);
-        return Result.ok({}, "保存成功~");
+        return Result.ok({}, "保存成功~ 重启后生效");
       },
     },
   };
