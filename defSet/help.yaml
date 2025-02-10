@@ -1,19 +1,17 @@
 
-- group: 测试A
+- group: 一言
   list:
     - icon: paimon
-      title: '测试1'
-      desc: '测试1'
+      title: '#一言'
+      desc: '获取一言'
     - icon: paimon
-      title: '测试2'
-      desc: '测试2'
+      title: '/一言'
+      desc: '获取一言'
+    - icon: paimon
+      title: '设置功能待完善'
+      desc: '可前往锅巴后台修改配置'
+      
+
+
 
       
-- group: 测试B
-  list:
-    - icon: paimon
-      title: '测试3'
-      desc: '测试3'
-    - icon: paimon
-      title: '测试4'
-      desc: '测试4'
