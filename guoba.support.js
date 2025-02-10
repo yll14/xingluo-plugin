@@ -25,8 +25,8 @@ export function supportGuoba() {
     configInfo: {
       schemas: [
         {
-          label: '一言配置',
-          component: 'SOFT_GROUP_BEGIN'
+          label: "一言",
+          component: "SOFT_GROUP_BEGIN",
         },
         {
           field: "Hitokoto.switch",
@@ -61,6 +61,34 @@ export function supportGuoba() {
                 label: "JSON(格式化好后的文本)",
                 value: "json",
               },
+              {
+                field: "Hitokoto.min_length",
+                label: "最小长度",
+                helpMessage: "输入最小长度",
+                bottomHelpMessage:
+                  "输入最小长度 最小长度不可大于最大长度 且不可相等",
+                component: "InputNumber",
+                required: true,
+                componentProps: {
+                  min: 0,
+                  max: 70,
+                  placeholder: "请输入最小长度",
+                },
+              },
+              {
+                field: "Hitokoto.max_length",
+                label: "最大长度",
+                helpMessage: "输入最大长度",
+                bottomHelpMessage:
+                  "输入最大长度 最大长度不可小于最小长度 且不可相等",
+                component: "InputNumber",
+                required: true,
+                componentProps: {
+                  min: 0,
+                  max: 75,
+                  placeholder: "请输入最大长度",
+                },
+              },
             ],
           },
         },
@@ -78,8 +106,8 @@ export function supportGuoba() {
           },
         },
         {
-          label: '自动检查更新配置',
-          component: 'SOFT_GROUP_BEGIN'
+          label: "自动检查更新",
+          component: "SOFT_GROUP_BEGIN",
         },
         {
           field: "updatetask.switch",

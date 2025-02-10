@@ -24,41 +24,58 @@ export class Hitokoto extends plugin {
     if (!config.switch) {
       return logger.info("[${PluginName_zh}]一言已关闭");
     }
-    if ((config.Type = "text")) {
+    if (config.Type == "text") {
       let types = (config.sentenceType || "")
         .split(",")
         .map((type) => `c=${type}`)
         .join("&");
       let textresponse = await fetch(
-        `${config.api}?encode=${config.apiType}&${types}`,
+        `${config.api}?encode=${config.Type}&${types}&min_length=${config.min_length}&max_length=${config.max_length}`,
       );
       let text = await textresponse.text();
-      e.reply(text);
+      try {
+        let json = JSON.parse(text);
+        if (json.status) {
+          e.reply(`错误码: ${json.status}\n错误信息: ${json.message}`);
+        } else if (json.hitokoto) {
+          e.reply(json.hitokoto);
+        } else {
+          e.reply("系统繁忙请稍后再试");
+        }
+      } catch (error) {
+        e.reply(text);
+      }
       return true;
-    } else if ((config.Type = "json")) {
+    } else if (config.Type == "json") {
       let types = (config.sentenceType || "")
         .split(",")
         .map((type) => `c=${type}`)
         .join("&");
       let jsonresponse = await fetch(
-        `${config.api}?encode=${config.apiType}&${types}`,
+        `${config.api}?encode=${config.Type}&${types}&min_length=${config.min_length}&max_length=${config.max_length}`,
       );
-      let msg = await jsonresponse.json();
-      let templateMessage = `
-            ID: ${msg.id}\n  
-            UUID: ${msg.uuid}\n
-            类型: ${msg.type}\n
-            句子: ${msg.hitokoto}\n
-            作者: ${msg.from}\n
-            来自: ${msg.from_who || "未知"}\n
-            创建者: ${msg.creator}\n
-            创建者UID: ${msg.creator_uid}\n
-            审核者: ${msg.reviewer}\n
-            提交来源: ${msg.commit_from}\n
-            创建时间: ${new Date(parseInt(msg.created_at) * 1000).toLocaleString()}\n
-            长度: ${msg.length}\n
-            `;
-      e.reply(templateMessage);
+      let json = await jsonresponse.json();
+
+      if (json.hitokoto) {
+        let templateMessage = `
+            ID: ${json.id}
+            UUID: ${json.uuid}
+            类型: ${json.type}
+            句子: ${json.hitokoto}
+            作者: ${json.from}
+            来自: ${json.from_who || "未知"}
+            创建者: ${json.creator}
+            创建者UID: ${json.creator_uid}
+            审核者: ${json.reviewer}
+            提交来源: ${json.commit_from}
+            创建时间: ${new Date(parseInt(json.created_at) * 1000).toLocaleString()}
+            长度: ${json.length}`;
+        e.reply(templateMessage);
+      } else if (json.status && json.message) {
+        e.reply(`错误码: ${json.status}\n错误信息: ${json.message}`);
+      } else {
+        e.reply("系统繁忙请稍后再试");
+      }
       return true;
     }
   }
