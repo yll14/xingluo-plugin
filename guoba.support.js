@@ -20,7 +20,7 @@ export function supportGuoba() {
       description: `洛洛插件的重构版本`,
       icon: "mdi:stove",
       iconColor: "#d19f56",
-      iconPath: path.join(__dirname, "resources/svg.svg"),
+      iconPath: path.join(__dirname, "resources/icon.jpg"),
     },
     configInfo: {
       schemas: [
