@@ -1,15 +1,50 @@
-
 - group: 一言
   list:
     - icon: paimon
       title: '#一言'
-      desc: '获取一言'
+      desc: '获取一言随机句子'
     - icon: paimon
-      title: '/一言'
-      desc: '获取一言'
+      title: '#一言设置 类型 <类型>'
+      desc: '设置一言的返回类型，例如：json 或 text'
     - icon: paimon
-      title: '设置功能待完善'
-      desc: '可前往锅巴后台修改配置'
+      title: '#一言设置 最小长度 <长度>'
+      desc: '设置一言返回句子的最小长度'
+    - icon: paimon
+      title: '#一言设置 最大长度 <长度>'
+      desc: '设置一言返回句子的最大长度'
+    - icon: paimon
+      title: '#一言设置 句子类型 <类型>'
+      desc: '设置一言的句子类型，例如：a,b,c'
+    - icon: paimon
+      title: '#一言查看句子类型'
+      desc: '查看一言的句子类型'
+    - icon: paimon
+      title: '#一言设置 API地址 <地址>'
+      desc: '设置一言的 API 地址'
+    - icon: paimon
+      title: '#一言开启'
+      desc: '开启一言功能'
+    - icon: paimon
+      title: '#一言关闭'
+      desc: '关闭一言功能'
+
+- group: 更新任务
+  list:
+    - icon: update
+      title: '#星落插件检查更新'
+      desc: '检查星落插件的更新'
+    - icon: update
+      title: '#星落插件设置更新推送开启'
+      desc: '开启更新推送功能'
+    - icon: update
+      title: '#星落插件设置更新推送关闭'
+      desc: '关闭更新推送功能'
+    - icon: update
+      title: '#星落插件设置更新推送自定义地址 <地址>'
+      desc: '设置自定义仓库地址用于更新检查'
+    - icon: update
+      title: '#星落插件设置更新推送表达式 <cron>'
+      desc: '设置更新检查的 cron 表达式'
       
 
 

@@ -60,10 +60,26 @@ async function ReadMessage(e) {
  * @returns
  */
 function GetConfig(file, name) {
-  let cfgyaml = `${_PATH}/plugins/${PluginName_en}/${file}/${name}.yaml`;
-  const configData = fs.readFileSync(cfgyaml, "utf8");
-  let config = yaml.parse(configData);
-  return { config };
+  try {
+    let cfgyaml = `${_PATH}/plugins/${PluginName_en}/${file}/${name}.yaml`;
+    const configData = fs.readFileSync(cfgyaml, "utf8");
+    let config = yaml.parse(configData);
+    return { config };
+  } catch (error) {
+    console.error(`Error reading or parsing config file: ${error.message}`);
+    return { config: null };
+  }
+}
+
+/**
+ * 保存配置文件
+ * @param {*} name 配置文件名
+ * @param {*} config 配置对象
+ */
+function saveConfig(name, config) {
+  const configFilePath = `${PluginPath}/config/${name}.yaml`;
+  const yamlContent = yaml.stringify(config);
+  fs.writeFileSync(configFilePath, yamlContent, 'utf8');
 }
 
 /**
@@ -128,5 +144,6 @@ export {
   Server_Status,
   ReadMessage,
   GetConfig,
+  saveConfig,
   image,
 };
