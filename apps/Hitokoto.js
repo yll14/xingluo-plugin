@@ -19,8 +19,12 @@ export class Hitokoto extends plugin {
           fnc: "Setting",
         },
         {
-          reg: /^[#/!]?(xl|星落|xingluo)(插件)?(设置)?查看句子类型$/i,
+          reg: /^[#/!]?(xl|星落|xingluo)(插件)?(设置)?查看一言句子类型$/i,
           fnc: "ViewSentenceType",
+        },
+        {
+          reg: /^[#/!]?(xl|星落|xingluo)(插件)?(设置)?查看一言配置$/i,
+          fnc: "ViewConfig",
         }
       ],
     });
@@ -128,5 +132,9 @@ export class Hitokoto extends plugin {
   }
   async ViewSentenceType(e) {
     e.reply(`句子类型: a:动画 b:漫画 c:游戏 d:文学 e:原创 f:来自网络 g:其他 h:影视 i:诗词 j:网易云 k:哲学 l:抖机灵\n选择多种使用英文逗号连接例如'a,b,c'`);
+  }
+  async ViewConfig(e) {
+    const { config } = GetConfig(`config`, `Hitokoto`);
+    e.reply(`一言配置:\n状态: ${config.switch ? '开启' : '关闭'}\n类型: ${config.Type}\n最小长度:${config.min_length}\n最大长度: ${config.max_length}\n句子类型: ${config.sentenceType ? config.sentenceType : '全部类型'}\nAPI地址: ${config.api}`);
   }
 }
