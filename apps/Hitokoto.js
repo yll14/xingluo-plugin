@@ -58,7 +58,7 @@ export class Hitokoto extends plugin {
 
       if (json.hitokoto) {
         e.reply(
-          `ID: ${json.id}\nUUID: ${json.uuid}\n类型: ${json.type}\n句子: ${json.hitokoto}\n作者: ${json.from}\n来自: ${json.from_who || "未知"}\n创建者: ${json.creator}\n创建者UID: ${json.creator_uid}审核者: ${json.reviewer}提交来源: ${json.commit_from}\n创建时间: ${new Date(parseInt(json.created_at) * 1000).toLocaleString()}\n长度: ${json.length}`,
+          `ID: ${json.id}\nUUID: ${json.uuid}\n类型: ${json.type}\n句子: ${json.hitokoto}\n作者: ${json.from}\n来自: ${json.from_who || "未知"}\n创建者: ${json.creator}\n创建者UID: ${json.creator_uid}\n审核者: ${json.reviewer}\n提交来源: ${json.commit_from}\n创建时间: ${new Date(parseInt(json.created_at) * 1000).toLocaleString()}\n长度: ${json.length}`,
         );
       } else if (json.status && json.message) {
         e.reply(`错误码: ${json.status}\n错误信息: ${json.message}`);
