@@ -1,5 +1,5 @@
 <div align="center">
-<h1>洛洛插件V6.0.0(xingluo-plugin)</h1>
+<h1>星落插件V6.0.0(xingluo-plugin)</h1>
 
  ## 插件功能
  </div>
