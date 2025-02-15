@@ -26,8 +26,6 @@ git clone --depth=1 https://github.com/yll14/xingluo-plugin.git ./plugins/xinglu
 ```
 ***若拉取速度慢/无法访问 可通过镜像加速***
 ```sh
-#Github-通过mirror.ghproxy.com镜像加速
-git clone --depth=1 https://ghfast.top/https://github.com/yll14/xingluo-plugin.git ./plugins/xingluo-plugin/
 #Github-通过ghproxy.net镜像加速
 git clone --depth=1 https://ghproxy.net/https://github.com/yll14/xingluo-plugin.git ./plugins/xingluo-plugin/
 ```
