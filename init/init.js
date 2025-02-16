@@ -13,7 +13,7 @@ export default new (class Init {
     }
   }
   async loadConfig() {
-    let configFolder = `${PluginPath}/config`;
+    /*let configFolder = `${PluginPath}/config`;
     let defSetFolder = `${PluginPath}/defSet`;
     if (!fs.existsSync(configFolder)) {
       fs.mkdirSync(configFolder);
@@ -33,7 +33,7 @@ export default new (class Init {
       const updatedConfigYAML = yaml.stringify(config);
       fs.writeFileSync(configFilePath, updatedConfigYAML, "utf8");
     }
-
+*/
     const updatetaskFilePath = `${configFolder}/updatetask.yaml`;
     const defUpdatetaskFilePath = `${defSetFolder}/updatetask.yaml`;
     if (!fs.existsSync(updatetaskFilePath)) {
