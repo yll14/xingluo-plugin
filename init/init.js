@@ -13,12 +13,12 @@ export default new (class Init {
     }
   }
   async loadConfig() {
-    /*let configFolder = `${PluginPath}/config`;
+    let configFolder = `${PluginPath}/config`;
     let defSetFolder = `${PluginPath}/defSet`;
     if (!fs.existsSync(configFolder)) {
       fs.mkdirSync(configFolder);
     }
-    const configFilePath = `${configFolder}/config.yaml`;
+    /*const configFilePath = `${configFolder}/config.yaml`;
     const defConfigFilePath = `${defSetFolder}/config.yaml`;
     if (!fs.existsSync(configFilePath)) {
       fs.copyFileSync(defConfigFilePath, configFilePath);
