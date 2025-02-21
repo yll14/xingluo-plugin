@@ -104,6 +104,27 @@ export function supportGuoba() {
           },
         },
         {
+          label: "一言JSON模板",
+          component: "SOFT_GROUP_BEGIN",
+        },
+        {
+          field: "Hitokoto.templateswitch",
+          label: "模板开关",
+          bottomHelpMessage: "是否开启模板",
+          component: "Switch",
+        },
+        {
+          field: "Hitokoto.customize",
+          label: "自定义模板",
+          helpMessage: "输入自定义模板",
+          bottomHelpMessage: "输入自定义模板",
+          component: "InputTextArea",
+          required: false,
+          componentProps: {
+            placeholder: "请输入自定义模板",
+          },
+        },
+        {
           label: "自动检查更新",
           component: "SOFT_GROUP_BEGIN",
         },

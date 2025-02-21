@@ -26,7 +26,7 @@ export class xingluoUpdateTask extends plugin {
           fnc: "UpdateTask",
         },
         {
-          reg: /^[#/!]?(xl|星落|xingluo)(插件)?(设置)?更新推送(.*)$/i,
+          reg: /^[#/!]?(xl|星落|xingluo)(插件)?更新推送设置(.*)$/i,
           fnc: "Setting",
         }
       ],

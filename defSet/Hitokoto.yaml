@@ -1,15 +1,21 @@
-#开关 true 开启 false 关闭
 switch: true
-#API地址
 api: https://v1.hitokoto.cn/
-#返回类型 默认text
-#可选 text 纯文本 或 json
 Type: text
-#句子类型  默认为空 选择多种使用英文逗号连接例如`a,b,c`
-#可选 a:动画 b:漫画 c:游戏 d:文学 e:原创 f:来自网络 g:其他 h:影视 i:诗词 j:网易云 k:哲学 l:抖机灵
-sentenceType: 
-#句子最小长度 默认0(包含)
+sentenceType: ""
 min_length: 0
-#句子最大长度 默认30(包含)
 max_length: 30
-
+default: |-
+  ID: ${json.id}
+  UUID: ${json.uuid}
+  类型: ${json.type}
+  句子: ${json.hitokoto}
+  作者: ${json.from}
+  来自: ${json.from_who}
+  创建者: ${json.creator}
+  创建者UID: ${json.creator_uid}
+  审核者: ${json.reviewer}
+  提交来源: ${json.commit_from}
+  创建时间: ${time}
+  长度: ${json.length}
+customize: ""
+templateswitch: false

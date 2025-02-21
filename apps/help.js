@@ -4,6 +4,7 @@ import {
   GetConfig,
   PluginName_zh,
   image,
+  PluginName_en,
 } from "../function/function.js";
 
 export class xingluohelp extends plugin {
@@ -17,7 +18,10 @@ export class xingluohelp extends plugin {
         {
           reg: /^[#/!]?(xl|星落|xingluo)(插件)?(帮助|菜单|help|功能|说明|指令|使用说明|命令)$/i,
           fnc: "help",
-        },
+        },{
+          reg: /^[#/!]?(xl|星落|xingluo)(插件)?设置$/i,
+          fnc: "Settinghelp",
+        }
       ],
     });
   }
@@ -26,7 +30,18 @@ export class xingluohelp extends plugin {
     let { img } = await image(e, "help", "help", {
       saveId: "help",
       cwd: _PATH,
-      genshinPath: `${_PATH}/plugins/genshin/resources/`,
+      iconPath: `${_PATH}/plugins/${PluginName_en}/resources/`,
+      helpData: config,
+      version: PluginVersion,
+    });
+    e.reply(img);
+  }
+  async Settinghelp(e) {
+    const { config } = GetConfig(`defSet`, `Settinghelp`);
+    let { img } = await image(e, "help", "Settinghelp", {
+      saveId: "Settinghelp",
+      cwd: _PATH,
+      iconPath: `${_PATH}/plugins/${PluginName_en}/resources/`,
       helpData: config,
       version: PluginVersion,
     });

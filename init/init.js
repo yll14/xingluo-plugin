@@ -44,7 +44,11 @@ export default new (class Init {
     if (!fs.existsSync(hitokotoFilePath)) {
       fs.copyFileSync(defHitokotoFilePath, hitokotoFilePath);
     }
-
+    const SettinghelpFilePath = `${configFolder}/Settinghelp.yaml`;
+    const defSettinghelpFilePath = `${defSetFolder}/Settinghelp.yaml`;
+    if (!fs.existsSync(SettinghelpFilePath)) {
+      fs.copyFileSync(defSettinghelpFilePath, SettinghelpFilePath);
+    }
     /*
         if(!fs.existsSync(`./plugins/${PluginName_en}/config/fishText.yaml`)) {
           fs.copyFileSync(`./plugins/${PluginName_en}/defSet/fishText.yaml`, `./plugins/${PluginName_en}/config/fishText.yaml`)
