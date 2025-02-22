@@ -1,0 +1,7 @@
+#开关 true 开启 false 关闭
+switch: true
+#API地址  仅适配DailyHotAPI https://github.com/imsyy/DailyHotApi
+#结尾不要加'/'!!!!
+api: https://api.hot.yll14.cn
+# 是否显示链接
+showLink: true

@@ -1,8 +1,14 @@
+#开关 true 开启 false 关闭
 switch: true
+#API地址
 api: https://v1.hitokoto.cn/
+#类型 text 文本 json 返回格式化好后的模板内容
 Type: text
+#句子类型
 sentenceType: ""
+#最小长度
 min_length: 0
+#最大长度
 max_length: 30
 default: |-
   ID: ${json.id}
@@ -17,5 +23,7 @@ default: |-
   提交来源: ${json.commit_from}
   创建时间: ${time}
   长度: ${json.length}
+#自定义模板
 customize: ""
+#自定义模板开关
 templateswitch: false

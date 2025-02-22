@@ -12,7 +12,7 @@ export class Hitokoto extends plugin {
 
       rule: [
         {
-          reg: /^[#/]?(一言|Hitokoto)$/i,
+          reg: /^[#/!]?(一言|Hitokoto)$/i,
           fnc: "Hitokoto",
         },
         {

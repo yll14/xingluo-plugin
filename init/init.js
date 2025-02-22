@@ -49,6 +49,11 @@ export default new (class Init {
     if (!fs.existsSync(SettinghelpFilePath)) {
       fs.copyFileSync(defSettinghelpFilePath, SettinghelpFilePath);
     }
+    const DailyHotFilePath = `${configFolder}/DailyHot.yaml`;
+    const defDailyHotFilePath = `${defSetFolder}/DailyHot.yaml`;
+    if (!fs.existsSync(DailyHotFilePath)) {
+      fs.copyFileSync(defDailyHotFilePath, DailyHotFilePath);
+    }
     /*
         if(!fs.existsSync(`./plugins/${PluginName_en}/config/fishText.yaml`)) {
           fs.copyFileSync(`./plugins/${PluginName_en}/defSet/fishText.yaml`, `./plugins/${PluginName_en}/config/fishText.yaml`)

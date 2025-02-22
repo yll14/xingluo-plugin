@@ -38,7 +38,7 @@ export class xingluohelp extends plugin {
   }
   async Settinghelp(e) {
     const { config } = GetConfig(`defSet`, `Settinghelp`);
-    let { img } = await image(e, "help", "Settinghelp", {
+    let { img } = await image(e, "Settinghelp", "Settinghelp", {
       saveId: "Settinghelp",
       cwd: _PATH,
       iconPath: `${_PATH}/plugins/${PluginName_en}/resources/`,

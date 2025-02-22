@@ -8,3 +8,5 @@ config/
 # 排除目录下的文件
 apps/dev.js
 apps/a.js
+resources/html/DailyHot.html
+resources/html/DailyHot.css
