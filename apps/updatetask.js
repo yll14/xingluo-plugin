@@ -28,7 +28,7 @@ export class xingluoUpdateTask extends plugin {
         {
           reg: /^[#/!]?(xl|星落|xingluo)(插件)?更新推送设置(.*)$/i,
           fnc: "Setting",
-        }
+        },
       ],
     });
     this.task = {
@@ -136,31 +136,31 @@ export class xingluoUpdateTask extends plugin {
     const { config } = GetConfig(`config`, `updatetask`);
     const match = e.msg.match(/(开启|关闭|cron|仓库地址)\s*(.*)/);
     if (!match) {
-      return e.reply('命令格式错误或未匹配');
+      return e.reply("命令格式错误或未匹配");
     }
 
     const action = match[1];
     const value = match[2].trim();
 
-    if (action === '开启' || action === '关闭') {
-      const type = action === '开启';
+    if (action === "开启" || action === "关闭") {
+      const type = action === "开启";
       config.switch = type;
-      e.reply(`更新推送已${type ? '开启' : '关闭'}`);
-    } else if (action === 'cron') {
+      e.reply(`更新推送已${type ? "开启" : "关闭"}`);
+    } else if (action === "cron") {
       if (!value) {
-        return e.reply('请提供有效的 cron 表达式');
+        return e.reply("请提供有效的 cron 表达式");
       }
       config.cron = value;
       e.reply(`cron 表达式已更新为: ${value}`);
-    } else if (action === '仓库地址') {
+    } else if (action === "仓库地址") {
       if (!value) {
-        return e.reply('请提供有效的仓库地址');
+        return e.reply("请提供有效的仓库地址");
       }
       config.customRepository = value;
       e.reply(`自定义仓库地址已更新为: ${value}`);
     }
 
-    saveConfig('updatetask', config);
+    saveConfig("updatetask", config);
   }
 }
 
@@ -198,5 +198,3 @@ function init() {
 
   logger.info("初始化完成，已处理 CUSTOM_REPOSITORY 列表");
 }
-
-

@@ -34,7 +34,7 @@ function GetConfig(file, name) {
 function saveConfig(name, config) {
   const configFilePath = `${PluginPath}/config/${name}.yaml`;
   const yamlContent = yaml.stringify(config);
-  fs.writeFileSync(configFilePath, yamlContent, 'utf8');
+  fs.writeFileSync(configFilePath, yamlContent, "utf8");
 }
 
 /**
@@ -73,7 +73,6 @@ async function image(e, file, name, obj) {
     img,
   };
 }
-
 
 export {
   _PATH,

@@ -125,6 +125,33 @@ export function supportGuoba() {
           },
         },
         {
+          label: "每日热搜",
+          component: "SOFT_GROUP_BEGIN",
+        },
+        {
+          field: "DailyHot.switch",
+          label: "功能开关",
+          bottomHelpMessage: "是否开启",
+          component: "Switch",
+        },
+        {
+          field: "DailyHot.api",
+          label: "API地址",
+          helpMessage: "输入API地址",
+          bottomHelpMessage: "输入API地址 末尾不要加'/'",
+          component: "Input",
+          required: true,
+          componentProps: {
+            placeholder: "请输入API地址 末尾不要加'/'",
+          },
+        },
+        {
+          field: "DailyHot.showLink",
+          label: "是否显示链接",
+          bottomHelpMessage: "是否显示链接",
+          component: "Switch",
+        },
+        {
           label: "自动检查更新",
           component: "SOFT_GROUP_BEGIN",
         },
