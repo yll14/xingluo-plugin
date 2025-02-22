@@ -1,6 +1,6 @@
 <div align="center">
-<h1>星落插件 V6.0(xingluo-plugin)</h1>
 
+# [星落插件](https://blog.yll14.cn/docs/xingluo) V6.1(xingluo-plugin)
  ## 插件功能
  </div>
 
@@ -36,7 +36,7 @@ git clone --depth=1 https://ghproxy.net/https://github.com/yll14/xingluo-plugin.
 <img src='https://img.yll14.cn/i/2025/02/08/67a70020961d4.png'  alt='Download-xingluo-plugin.png'></img>
 </div>
 
-### 安装依赖 一定要安装依赖!!!
+### ~~安装依赖 一定要安装依赖!!!~~ 现在不需要
 
 ```
 pnpm install --filter=xingluo-plugin
@@ -69,7 +69,7 @@ pnpm install --filter=xingluo-plugin
 
 1) 功能仅限内部交流与小范围使用，请勿将xingluo-plugin用于以盈利为目的的场景
 
-2) 本插件仅供交流学习使用，如有侵权请联系，会立即删除
+2) 本插件仅供交流学习使用，如有侵权请联系，会立即修改或删除
 
 3) 使用本插件造成的一切损失，以及不良影响，由使用者承担
 
