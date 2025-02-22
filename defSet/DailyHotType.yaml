@@ -1,0 +1,59 @@
+- group: 每日热搜
+  list:
+    - icon: DailyHot
+      title: '#百度热搜'
+      desc: '百度热搜'
+    - icon: DailyHot
+      title: '#B站'
+      desc: 'B站热搜'
+    - icon: DailyHot
+      title: '#豆瓣'
+      desc: '豆瓣热搜'
+    - icon: DailyHot
+      title: '#抖音'
+      desc: '抖音热搜'
+    - icon: DailyHot
+      title: '#原神'
+      desc: '原神热搜'
+    - icon: DailyHot
+      title: '#崩坏'
+      desc: '崩坏热搜'
+    - icon: DailyHot
+      title: '#快手'
+      desc: '快手热搜'
+    - icon: DailyHot
+      title: '#米游社'
+      desc: '米游社热搜'
+    - icon: DailyHot
+      title: '#网易新闻'
+      desc: '网易新闻热搜'
+    - icon: DailyHot
+      title: '#新浪新闻'
+      desc: '新浪新闻热搜'
+    - icon: DailyHot
+      title: '#新浪'
+      desc: '新浪热搜'
+    - icon: DailyHot
+      title: '#星铁'
+      desc: '星铁热搜'
+    - icon: DailyHot
+      title: '#澎湃新闻'
+      desc: '澎湃新闻热搜'
+    - icon: DailyHot
+      title: '#贴吧'
+      desc: '贴吧热搜'
+    - icon: DailyHot
+      title: '#头条'
+      desc: '头条热搜'
+    - icon: DailyHot
+      title: '#微博'
+      desc: '微博热搜'
+    - icon: DailyHot
+      title: '#知乎日报'
+      desc: '知乎日报热搜'
+    - icon: DailyHot
+      title: '#知乎'
+      desc: '知乎热搜'
+    - icon: DailyHot
+      title: '#腾讯新闻'
+      desc: '腾讯新闻热搜'

@@ -23,6 +23,10 @@ export class xingluohelp extends plugin {
           reg: /^[#/!]?(xl|星落|xingluo)(插件)?设置$/i,
           fnc: "Settinghelp",
         },
+        {
+          reg: /^[#/!]?(xl|星落|xingluo)(插件)每日热搜$/i,
+          fnc: "DailyHotType",
+        },
       ],
     });
   }
@@ -41,6 +45,17 @@ export class xingluohelp extends plugin {
     const { config } = GetConfig(`defSet`, `Settinghelp`);
     let { img } = await image(e, "Settinghelp", "Settinghelp", {
       saveId: "Settinghelp",
+      cwd: _PATH,
+      iconPath: `${_PATH}/plugins/${PluginName_en}/resources/`,
+      helpData: config,
+      version: PluginVersion,
+    });
+    e.reply(img);
+  }
+  async DailyHotType(e) {
+    const { config } = GetConfig(`defSet`, `DailyHotType`);
+    let { img } = await image(e, "DailyHotType", "DailyHotType", {
+      saveId: "DailyHotType",
       cwd: _PATH,
       iconPath: `${_PATH}/plugins/${PluginName_en}/resources/`,
       helpData: config,

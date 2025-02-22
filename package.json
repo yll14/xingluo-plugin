@@ -1,6 +1,6 @@
 {
     "name": "xingluo-plugin",
-    "version": "V6.0",
+    "version": "V6.1",
     "description": "luoluo-plugin的重构版本",
     "type": "module",
     "main": "index.js",

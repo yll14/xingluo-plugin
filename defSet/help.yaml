@@ -3,7 +3,9 @@
     - icon: paimon
       title: '#一言'
       desc: '获取一言随机句子'
-
+    - icon: paimon
+      title: '#每日热搜'
+      desc: '获取每日热搜'
 
 - group: 其他
   list:
