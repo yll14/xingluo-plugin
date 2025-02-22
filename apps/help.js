@@ -24,7 +24,7 @@ export class xingluohelp extends plugin {
           fnc: "Settinghelp",
         },
         {
-          reg: /^[#/!]?(xl|星落|xingluo)(插件)每日热搜$/i,
+          reg: /^[#/!]?(xl|星落|xingluo)(插件)?每日热搜$/i,
           fnc: "DailyHotType",
         },
       ],
@@ -36,7 +36,7 @@ export class xingluohelp extends plugin {
       saveId: "help",
       cwd: _PATH,
       iconPath: `${_PATH}/plugins/${PluginName_en}/resources/`,
-      helpData: config,
+      Data: config,
       version: PluginVersion,
     });
     e.reply(img);
@@ -47,7 +47,7 @@ export class xingluohelp extends plugin {
       saveId: "Settinghelp",
       cwd: _PATH,
       iconPath: `${_PATH}/plugins/${PluginName_en}/resources/`,
-      helpData: config,
+      Data: config,
       version: PluginVersion,
     });
     e.reply(img);
@@ -58,7 +58,7 @@ export class xingluohelp extends plugin {
       saveId: "DailyHotType",
       cwd: _PATH,
       iconPath: `${_PATH}/plugins/${PluginName_en}/resources/`,
-      helpData: config,
+      Data: config,
       version: PluginVersion,
     });
     e.reply(img);
