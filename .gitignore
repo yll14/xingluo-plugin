@@ -1,12 +1,17 @@
 # 排除特定目录及其内容
 node_modules/
 config/
+
 # 排除所有的 .log 文件
 #*.log
 # 排除所有的临时文件
 #*~
 # 排除目录下的文件
 apps/dev.js
-apps/a.js
+apps/test.js
+apps/updatetask.js
+defSet/updatetask.yaml
+defSet/Settinghelp copy.yaml
+defSet/help copy.yaml
 resources/html/DailyHot.html
 resources/html/DailyHot.css

@@ -38,6 +38,7 @@ export class xingluohelp extends plugin {
       iconPath: `${_PATH}/plugins/${PluginName_en}/resources/`,
       Data: config,
       version: PluginVersion,
+      author: PluginAuthor,
     });
     e.reply(img);
   }
@@ -49,6 +50,7 @@ export class xingluohelp extends plugin {
       iconPath: `${_PATH}/plugins/${PluginName_en}/resources/`,
       Data: config,
       version: PluginVersion,
+      author: PluginAuthor,
     });
     e.reply(img);
   }
@@ -60,6 +62,7 @@ export class xingluohelp extends plugin {
       iconPath: `${_PATH}/plugins/${PluginName_en}/resources/`,
       Data: config,
       version: PluginVersion,
+      author: PluginAuthor,
     });
     e.reply(img);
   }

@@ -7,6 +7,7 @@ export default new (class Init {
     try {
       await this.loadConfig();
       await this.globalVersion();
+      await this.globalAuthor();
       return { boolean: true, msg: null };
     } catch (error) {
       return { boolean: false, msg: error };
@@ -73,5 +74,12 @@ export default new (class Init {
     );
     PluginVersion = PluginVersion.version;
     global.PluginVersion = PluginVersion;
+  }
+  async globalAuthor() {
+    let PluginAuthor = await fetch(`https://web.yll14.cn?type=author`).then(
+      (res) => res.json(),
+    );
+    PluginAuthor = PluginAuthor.Other.author;
+    global.PluginAuthor = PluginAuthor;
   }
 })();

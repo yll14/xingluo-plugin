@@ -4,14 +4,11 @@
       title: '#一言'
       desc: '获取一言随机句子'
     - icon: paimon
-      title: '#每日热搜'
+      title: '#星落每日热搜'
       desc: '获取每日热搜'
 
 - group: 其他
   list:
-    - icon: paimon
-      title: '#星落插件检查更新'
-      desc: '检查星落插件的更新'
     - icon: paimon
       title: '#星落插件设置'
       desc: '设置星落插件'
