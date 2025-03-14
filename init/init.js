@@ -79,7 +79,7 @@ export default new (class Init {
     let PluginAuthor = await fetch(`https://web.yll14.cn?type=author`).then(
       (res) => res.json(),
     );
-    PluginAuthor = PluginAuthor.Other.author;
+    PluginAuthor = PluginAuthor.author;
     global.PluginAuthor = PluginAuthor;
   }
 })();
