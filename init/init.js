@@ -1,6 +1,8 @@
 import yaml from "yaml";
 import fs from "node:fs";
 import { _PATH, PluginName_en, PluginPath } from "../function/function.js";
+import path from "node:path";
+
 
 export default new (class Init {
   async init() {
@@ -34,38 +36,51 @@ export default new (class Init {
       const updatedConfigYAML = yaml.stringify(config);
       fs.writeFileSync(configFilePath, updatedConfigYAML, "utf8");
     }
-*/
-    const updatetaskFilePath = `${configFolder}/updatetask.yaml`;
-    const defUpdatetaskFilePath = `${defSetFolder}/updatetask.yaml`;
-    if (!fs.existsSync(updatetaskFilePath)) {
-      fs.copyFileSync(defUpdatetaskFilePath, updatetaskFilePath);
-    }
-    const hitokotoFilePath = `${configFolder}/Hitokoto.yaml`;
+      */
+    const HitokotoFilePath = `${configFolder}/Hitokoto.yaml`;
     const defHitokotoFilePath = `${defSetFolder}/Hitokoto.yaml`;
-    if (!fs.existsSync(hitokotoFilePath)) {
-      fs.copyFileSync(defHitokotoFilePath, hitokotoFilePath);
+    if (!fs.existsSync(HitokotoFilePath)) {
+      fs.copyFileSync(defHitokotoFilePath, HitokotoFilePath);
+    } else {
+      const defHitokoto = yaml.parse(fs.readFileSync(defHitokotoFilePath, "utf8"));
+      let Hitokoto = yaml.parse(fs.readFileSync(HitokotoFilePath, "utf8"));
+      for (const key in defHitokoto) {
+        if (!Hitokoto.hasOwnProperty(key)) {
+          Hitokoto[key] = defHitokoto[key];
+        }
+      }
+      const updatedConfigYAML = yaml.stringify(Hitokoto);
+      fs.writeFileSync(HitokotoFilePath, updatedConfigYAML, "utf8");
+      logger.info(logger.green(`[${PluginName_en}]${path.basename(HitokotoFilePath)}配置文件缺少键值，已从/defSet文件夹中更新`));
     }
-    const SettinghelpFilePath = `${configFolder}/Settinghelp.yaml`;
-    const defSettinghelpFilePath = `${defSetFolder}/Settinghelp.yaml`;
-    if (!fs.existsSync(SettinghelpFilePath)) {
-      fs.copyFileSync(defSettinghelpFilePath, SettinghelpFilePath);
-    }
+    
     const DailyHotFilePath = `${configFolder}/DailyHot.yaml`;
     const defDailyHotFilePath = `${defSetFolder}/DailyHot.yaml`;
     if (!fs.existsSync(DailyHotFilePath)) {
       fs.copyFileSync(defDailyHotFilePath, DailyHotFilePath);
+    } else {
+      const defDailyHot = yaml.parse(fs.readFileSync(defDailyHotFilePath, "utf8"));
+      let DailyHot = yaml.parse(fs.readFileSync(DailyHotFilePath, "utf8"));
+      for (const key in defDailyHot) {
+        if (!DailyHot.hasOwnProperty(key)) {
+          DailyHot[key] = defDailyHot[key];
+        }
+      }
+      const updatedConfigYAML = yaml.stringify(DailyHot);
+      fs.writeFileSync(DailyHotFilePath, updatedConfigYAML, "utf8");
+      logger.info(logger.green(`[${PluginName_en}]${path.basename(DailyHotFilePath)}配置文件缺少键值，已从/defSet文件夹中更新`));
     }
     /*
-        if(!fs.existsSync(`./plugins/${PluginName_en}/config/fishText.yaml`)) {
-          fs.copyFileSync(`./plugins/${PluginName_en}/defSet/fishText.yaml`, `./plugins/${PluginName_en}/config/fishText.yaml`)
+        if(!fs.existsSync(`./plugins/${PluginName_en}/config/.yaml`)) {
+          fs.copyFileSync(`./plugins/${PluginName_en}/defSet/.yaml`, `./plugins/${PluginName_en}/config/.yaml`)
         } else {
-          let config = yaml.parse(fs.readFileSync(`./plugins/${PluginName_en}/config/fishText.yaml`, `utf-8`))
+          let config = yaml.parse(fs.readFileSync(`./plugins/${PluginName_en}/config/.yaml`, `utf-8`))
           let configNT = config.nothingText || []
-          config = config.fishText
-          let defcfg = yaml.parse(fs.readFileSync(`./plugins/${PluginName_en}/defSet/fishText.yaml`, `utf-8`))
+          config = config.
+          let defcfg = yaml.parse(fs.readFileSync(`./plugins/${PluginName_en}/defSet/.yaml`, `utf-8`))
           let defcfgNT = defcfg.nothingText
-          defcfg = defcfg.fishText
-          fs.writeFileSync(`./plugins/${PluginName_en}/config/fishText.yaml`, yaml.stringify({ fishText: [...new Set(config.concat(defcfg))], nothingText: [...new Set(configNT.concat(defcfgNT))] }), `utf-8`)
+          defcfg = defcfg.
+          fs.writeFileSync(`./plugins/${PluginName_en}/config/.yaml`, yaml.stringify({ : [...new Set(config.concat(defcfg))], nothingText: [...new Set(configNT.concat(defcfgNT))] }), `utf-8`)
         }*/
   }
   async globalVersion() {

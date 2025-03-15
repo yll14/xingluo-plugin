@@ -1,4 +1,3 @@
-import fetch from "node-fetch";
 import yaml from "yaml";
 import fs from "fs";
 const _PATH = process.cwd().replace(/\\/g, "/");
@@ -15,15 +14,10 @@ import cfg from "../../../lib/config/config.js";
  * @returns
  */
 function GetConfig(file, name) {
-  try {
     let cfgyaml = `${_PATH}/plugins/${PluginName_en}/${file}/${name}.yaml`;
     const configData = fs.readFileSync(cfgyaml, "utf8");
     let config = yaml.parse(configData);
     return { config };
-  } catch (error) {
-    console.error(`Error reading or parsing config file: ${error.message}`);
-    return { config: null };
-  }
 }
 
 /**

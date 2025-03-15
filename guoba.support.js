@@ -11,7 +11,7 @@ export function supportGuoba() {
     pluginInfo: {
       name: `${PluginName_en}`,
       title: `${PluginName_zh}(${PluginName_en})`,
-      author: "洛洛",
+      author: PluginAuthor,
       authorLink: "https://gitee.com/yll14/",
       link: "https://gitee.com/yll14/xingluo-plugin",
       showInMenu: "auto",
