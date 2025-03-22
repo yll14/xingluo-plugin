@@ -3,7 +3,6 @@ import fs from "node:fs";
 import { _PATH, PluginName_en, PluginPath } from "../function/function.js";
 import path from "node:path";
 
-
 export default new (class Init {
   async init() {
     try {
@@ -37,38 +36,84 @@ export default new (class Init {
       fs.writeFileSync(configFilePath, updatedConfigYAML, "utf8");
     }
       */
+    /** Hitokoto **/
     const HitokotoFilePath = `${configFolder}/Hitokoto.yaml`;
     const defHitokotoFilePath = `${defSetFolder}/Hitokoto.yaml`;
     if (!fs.existsSync(HitokotoFilePath)) {
       fs.copyFileSync(defHitokotoFilePath, HitokotoFilePath);
     } else {
-      const defHitokoto = yaml.parse(fs.readFileSync(defHitokotoFilePath, "utf8"));
+      const defHitokoto = yaml.parse(
+        fs.readFileSync(defHitokotoFilePath, "utf8"),
+      );
       let Hitokoto = yaml.parse(fs.readFileSync(HitokotoFilePath, "utf8"));
+      let updated = false;
       for (const key in defHitokoto) {
         if (!Hitokoto.hasOwnProperty(key)) {
           Hitokoto[key] = defHitokoto[key];
+          updated = true;
         }
       }
-      const updatedConfigYAML = yaml.stringify(Hitokoto);
-      fs.writeFileSync(HitokotoFilePath, updatedConfigYAML, "utf8");
-      logger.info(logger.green(`[${PluginName_en}]${path.basename(HitokotoFilePath)}配置文件缺少键值，已从/defSet文件夹中更新`));
+      if (updated) {
+        const updatedConfigYAML = yaml.stringify(Hitokoto);
+        fs.writeFileSync(HitokotoFilePath, updatedConfigYAML, "utf8");
+        logger.info(
+          logger.green(
+            `[${PluginName_en}]${path.basename(HitokotoFilePath)}配置文件缺少键值，已从/defSet文件夹中更新`,
+          ),
+        );
+      }
     }
-    
+    /** DailyHot **/
     const DailyHotFilePath = `${configFolder}/DailyHot.yaml`;
     const defDailyHotFilePath = `${defSetFolder}/DailyHot.yaml`;
     if (!fs.existsSync(DailyHotFilePath)) {
       fs.copyFileSync(defDailyHotFilePath, DailyHotFilePath);
     } else {
-      const defDailyHot = yaml.parse(fs.readFileSync(defDailyHotFilePath, "utf8"));
+      const defDailyHot = yaml.parse(
+        fs.readFileSync(defDailyHotFilePath, "utf8"),
+      );
       let DailyHot = yaml.parse(fs.readFileSync(DailyHotFilePath, "utf8"));
+      let updated = false;
       for (const key in defDailyHot) {
         if (!DailyHot.hasOwnProperty(key)) {
           DailyHot[key] = defDailyHot[key];
+          updated = true;
         }
       }
-      const updatedConfigYAML = yaml.stringify(DailyHot);
-      fs.writeFileSync(DailyHotFilePath, updatedConfigYAML, "utf8");
-      logger.info(logger.green(`[${PluginName_en}]${path.basename(DailyHotFilePath)}配置文件缺少键值，已从/defSet文件夹中更新`));
+      if (updated) {
+        const updatedConfigYAML = yaml.stringify(DailyHot);
+        fs.writeFileSync(DailyHotFilePath, updatedConfigYAML, "utf8");
+        logger.info(
+          logger.green(
+            `[${PluginName_en}]${path.basename(DailyHotFilePath)}配置文件缺少键值，已从/defSet文件夹中更新`,
+          ),
+        );
+      }
+    }
+    /** Ping **/
+    const PingFilePath = `${configFolder}/Ping.yaml`;
+    const defPingFilePath = `${defSetFolder}/Ping.yaml`;
+    if (!fs.existsSync(PingFilePath)) {
+      fs.copyFileSync(defPingFilePath, PingFilePath);
+    } else {
+      const defPing = yaml.parse(fs.readFileSync(defPingFilePath, "utf8"));
+      let Ping = yaml.parse(fs.readFileSync(PingFilePath, "utf8"));
+      let updated = false;
+      for (const key in defPing) {
+        if (!Ping.hasOwnProperty(key)) {
+          Ping[key] = defPing[key];
+          updated = true;
+        }
+      }
+      if (updated) {
+        const updatedConfigYAML = yaml.stringify(Ping);
+        fs.writeFileSync(PingFilePath, updatedConfigYAML, "utf8");
+        logger.info(
+          logger.green(
+            `[${PluginName_en}]${path.basename(PingFilePath)}配置文件缺少键值，已从/defSet文件夹中更新`,
+          ),
+        );
+      }
     }
     /*
         if(!fs.existsSync(`./plugins/${PluginName_en}/config/.yaml`)) {
@@ -94,6 +139,11 @@ export default new (class Init {
     let PluginAuthor = await fetch(`https://web.yll14.cn?type=author`).then(
       (res) => res.json(),
     );
+    /*本地获取
+    let PluginAuthor = JSON.parse(
+      fs.readFileSync(`./plugins/${PluginName_en}/package.json`, `utf-8`),
+    );
+    */
     PluginAuthor = PluginAuthor.author;
     global.PluginAuthor = PluginAuthor;
   }

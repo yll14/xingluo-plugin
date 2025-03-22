@@ -1,5 +1,6 @@
 {
     "name": "xingluo-plugin",
+    "PluginName": "星落插件",
     "version": "V6.1",
     "description": "luoluo-plugin的重构版本",
     "type": "module",
@@ -8,6 +9,7 @@
       "fix": "npx prettier --write **/*.js && npx prettier --write *.js"
     },
     "dependencies": {
+      "iconv-lite": "^0.6.3"
     },
     "author": "洛洛",
     "license": "MIT"

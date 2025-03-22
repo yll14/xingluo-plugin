@@ -14,10 +14,10 @@ import cfg from "../../../lib/config/config.js";
  * @returns
  */
 function GetConfig(file, name) {
-    let cfgyaml = `${_PATH}/plugins/${PluginName_en}/${file}/${name}.yaml`;
-    const configData = fs.readFileSync(cfgyaml, "utf8");
-    let config = yaml.parse(configData);
-    return { config };
+  let cfgyaml = `${_PATH}/plugins/${PluginName_en}/${file}/${name}.yaml`;
+  const configData = fs.readFileSync(cfgyaml, "utf8");
+  let config = yaml.parse(configData);
+  return { config };
 }
 
 /**

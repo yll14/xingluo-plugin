@@ -151,6 +151,52 @@ export function supportGuoba() {
           bottomHelpMessage: "是否显示链接",
           component: "Switch",
         },
+        {
+          label: "Ping",
+          component: "SOFT_GROUP_BEGIN",
+        },
+        {
+          field: "Ping.switch",
+          label: "功能开关",
+          bottomHelpMessage: "是否开启",
+          component: "Switch",
+        },
+        {
+          field: "Ping.output",
+          label: "显示输出",
+          bottomHelpMessage: "是否显示输出",
+          component: "Switch",
+        },
+        {
+          field: "Ping.Networknodes",
+          label: "使用节点",
+          bottomHelpMessage: "是否使用节点",
+          component: "Switch",
+        },
+        {
+          field: "Ping.useNetworknodes",
+          label: "使用双节点",
+          bottomHelpMessage: "是否使用双节点",
+          component: "Switch",
+        },
+        {
+          field: "Ping.node",
+          label: "节点",
+          bottomHelpMessage: "选择节点",
+          component: "Select",
+          componentProps: {
+            options: [
+              {
+                label: "a节点(香港)",
+                value: "a",
+              },
+              {
+                label: "b节点(江苏南京)",
+                value: "b",
+              },
+            ],
+          },
+        },
       ],
       getConfigData() {
         return setting.merge();

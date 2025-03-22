@@ -1,42 +1,56 @@
 - group: 一言
   list:
     - icon: Setting
-      title: '#星落插件一言设置 <开启/关闭>'
-      desc: '开启/关闭一言功能'
+      title: "#星落插件一言设置 <开启/关闭>"
+      desc: "开启/关闭一言功能"
     - icon: Setting
-      title: '#星落插件一言设置类型 <类型>'
-      desc: '设置一言的返回类型，例如：json 或 text'
+      title: "#星落插件一言设置类型 <类型>"
+      desc: "设置一言的返回类型，例如：json 或 text"
     - icon: Setting
-      title: '#星落插件一言设置最小长度 <长度>'
-      desc: '设置一言返回句子的最小长度'
+      title: "#星落插件一言设置最小长度 <长度>"
+      desc: "设置一言返回句子的最小长度"
     - icon: Setting
-      title: '#星落插件一言设置最大长度 <长度>'
-      desc: '设置一言返回句子的最大长度'
+      title: "#星落插件一言设置最大长度 <长度>"
+      desc: "设置一言返回句子的最大长度"
     - icon: Setting
-      title: '#星落插件一言设置句子类型 <类型>'
-      desc: '设置一言的句子类型，例如：a,b,c'
+      title: "#星落插件一言设置句子类型 <类型>"
+      desc: "设置一言的句子类型，例如：a,b,c"
     - icon: Setting
-      title: '#星落插件一言设置API地址 <地址>'
-      desc: '设置一言的 API 地址'
+      title: "#星落插件一言设置API地址 <地址>"
+      desc: "设置一言的 API 地址"
     - icon: Setting
-      title: '#星落插件一言设置自定义模板 <模板>'
-      desc: '设置一言的自定义模板'
+      title: "#星落插件一言设置自定义模板 <模板>"
+      desc: "设置一言的自定义模板"
     - icon: Setting
-      title: '#星落插件查看一言句子类型'
-      desc: '查看一言的句子类型'
+      title: "#星落插件查看一言句子类型"
+      desc: "查看一言的句子类型"
     - icon: Setting
-      title: '#星落插件查看一言配置'
-      desc: '查看一言的配置'
+      title: "#星落插件查看一言配置"
+      desc: "查看一言的配置"
 
 - group: 每日热搜
   list:
     - icon: Setting
-      title: '#星落插件每日热搜 <开启/关闭>'
-      desc: '开启/关闭每日热搜功能'
+      title: "#星落插件每日热搜 <开启/关闭>"
+      desc: "开启/关闭每日热搜功能"
     - icon: Setting
-      title: '#星落插件每日热搜设置API地址 <地址>'
-      desc: '设置每日热搜的 API 地址'
+      title: "#星落插件每日热搜设置API地址 <地址>"
+      desc: "设置每日热搜的 API 地址"
     - icon: Setting
-      title: '#星落插件每日热搜显示链接 <开启/关闭>'
-      desc: '开启/关闭每日热搜的显示链接'
-    
+      title: "#星落插件每日热搜显示链接 <开启/关闭>"
+      desc: "开启/关闭每日热搜的显示链接"
+
+- group: Ping
+  list:
+    - icon: Setting
+      title: "#星落插件Ping <开启/关闭>"
+      desc: "开启/关闭Ping功能"
+    - icon: Setting
+      title: "#星落插件Ping显示输出 <开启/关闭>"
+      desc: "开启/关闭Ping的显示输出"
+    - icon: Setting
+      title: "#星落插件查看Ping配置"
+      desc: "查看Ping的当前配置"
+    - icon: Setting
+      title: "#星落插件Ping使用节点 <开启/关闭>"
+      desc: "开启/关闭Ping的使用节点"

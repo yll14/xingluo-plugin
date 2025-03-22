@@ -1,0 +1,16 @@
+#开关 true 开启 false 关闭
+switch: true
+#开关 用于选择是否使用远程节点
+Networknodes: false
+#开关 用于选择使用的节点
+node: a
+#开关 用于选择是否显示输出
+output: true
+#开关 用于选择是否使用双节点
+useNetworknodes: false
+#API地址 末尾不要加'/'
+api:
+  #a节点:香港
+  - https://apia.ping.yll14.cn
+  #b节点：南京
+  - https://apib.ping.yll14.cn

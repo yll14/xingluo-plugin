@@ -1,37 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../../plugins/xingluo-plugin/resources/html/help.css"
+    />
+    <link rel="shortcut icon" href="#" />
+  </head>
+  {{@headStyle}}
 
-<head>
-  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-  <link rel="stylesheet" type="text/css" href="../../../plugins/xingluo-plugin/resources/html/help.css" />
-  <link rel="shortcut icon" href="#" />
-</head>
-{{@headStyle}}
-
-<body>
-  <div class="container" id="container">
-    <div class="head_box">
-      <div class="id_text">XingLuo-Plugin设置</div>
-      <h2 class="day_text">设置使用说明-{{version}}</h2>
-      <!--<img class="logo" src="../../../plugins/xingluo-plugin/resources/logo.png"/>-->
-    </div>
-    {{each Data val}}
-    <div class="data_box">
-      <div class="tab_lable">{{val.group}}</div>
-      <div class="list">
-        {{each val.list item}}
-        <div class="item">
-          <img class="icon" src="{{iconPath}}img/icon/{{item.icon}}.png" />
-          <div class="title">
-            <div class="text">{{item.title}}</div>
-            <div class="dec">{{item.desc}}</div>
+  <body>
+    <div class="container" id="container">
+      <div class="head_box">
+        <div class="id_text">XingLuo-Plugin设置</div>
+        <h2 class="day_text">设置使用说明-{{version}}</h2>
+        <!--<img class="logo" src="../../../plugins/xingluo-plugin/resources/logo.png"/>-->
+      </div>
+      {{each Data val}}
+      <div class="data_box">
+        <div class="tab_lable">{{val.group}}</div>
+        <div class="list">
+          {{each val.list item}}
+          <div class="item">
+            <img class="icon" src="{{iconPath}}img/icon/{{item.icon}}.png" />
+            <div class="title">
+              <div class="text">{{item.title}}</div>
+              <div class="dec">{{item.desc}}</div>
+            </div>
           </div>
+          {{/each}}
         </div>
-        {{/each}}
+      </div>
+      {{/each}}
+      <div class="logo">
+        Created By {{botname}} {{MiaoV}} & XingLuo-Plugin {{version}}
       </div>
     </div>
-    {{/each}}
-    <div class="logo">Created By {{botname}} {{MiaoV}} & XingLuo-Plugin {{version}}</div>
-  </div>
-</body>
+  </body>
 </html>
