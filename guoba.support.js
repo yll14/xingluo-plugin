@@ -114,17 +114,6 @@ export function supportGuoba() {
           component: "Switch",
         },
         {
-          field: "Hitokoto.customize",
-          label: "自定义模板",
-          helpMessage: "输入自定义模板",
-          bottomHelpMessage: "输入自定义模板",
-          component: "InputTextArea",
-          required: false,
-          componentProps: {
-            placeholder: "请输入自定义模板",
-          },
-        },
-        {
           label: "每日热搜",
           component: "SOFT_GROUP_BEGIN",
         },
