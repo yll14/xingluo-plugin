@@ -144,21 +144,13 @@ export default new (class Init {
       PluginAuthor = PluginAuthor.author;
       global.PluginAuthor = PluginAuthor;
     } catch (error) {
+      logger.info(logger.yellow(`可忽略的警告`));
       logger.info(
-        logger.yellow(`可忽略的警告`),
+        logger.blue(`[${PluginName_en}]`),
+        logger.white(`网络获取作者信息失败:`),
+        logger.red(`${error}`),
       );
-      logger.info(
-        logger.blue(
-          `[${PluginName_en}]`,
-        ), logger.white(
-          `网络获取作者信息失败:`,
-        ), logger.red(
-          `${error}`,
-        ),
-      );
-      logger.info(
-        logger.green(`已从本地获取文件获取作者信息`),
-      );
+      logger.info(logger.green(`已从本地获取文件获取作者信息`));
       try {
         // 本地获取
         let PluginAuthor = JSON.parse(
@@ -167,15 +159,13 @@ export default new (class Init {
         PluginAuthor = PluginAuthor.author;
         global.PluginAuthor = PluginAuthor;
       } catch (error) {
-        logger.info(
-          logger.red(`出现错误！`),
-        );
+        logger.info(logger.red(`出现错误！`));
         logger.info(
           logger.blue(`[${PluginName_en}]`),
           logger.white(`本地获取作者信息失败:`),
           logger.red(`${error}`),
         );
-        global.PluginAuthor = `未知作者-`+PluginVersion;
+        global.PluginAuthor = `未知作者-` + PluginVersion;
       }
     }
   }
