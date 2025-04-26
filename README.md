@@ -1,6 +1,6 @@
 <div align="center">
 
-# [星落插件](https://blog.yll14.cn/docs/xingluo) V6.2(xingluo-plugin)
+# [星落插件](https://blog.yll14.cn/docs/xingluo) V6.3(xingluo-plugin)
 
 ## 插件功能
 

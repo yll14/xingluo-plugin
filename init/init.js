@@ -136,15 +136,47 @@ export default new (class Init {
     global.PluginVersion = PluginVersion;
   }
   async globalAuthor() {
-    let PluginAuthor = await fetch(`https://web.yll14.cn?type=author`).then(
-      (res) => res.json(),
-    );
-    /*本地获取
-    let PluginAuthor = JSON.parse(
-      fs.readFileSync(`./plugins/${PluginName_en}/package.json`, `utf-8`),
-    );
-    */
-    PluginAuthor = PluginAuthor.author;
-    global.PluginAuthor = PluginAuthor;
+    try {
+      // 网络获取
+      let PluginAuthor = await fetch(`https://web.yll14.cn?type=author`).then(
+        (res) => res.json(),
+      );
+      PluginAuthor = PluginAuthor.author;
+      global.PluginAuthor = PluginAuthor;
+    } catch (error) {
+      logger.info(
+        logger.yellow(`可忽略的警告`),
+      );
+      logger.info(
+        logger.blue(
+          `[${PluginName_en}]`,
+        ), logger.white(
+          `网络获取作者信息失败:`,
+        ), logger.red(
+          `${error}`,
+        ),
+      );
+      logger.info(
+        logger.green(`已从本地获取文件获取作者信息`),
+      );
+      try {
+        // 本地获取
+        let PluginAuthor = JSON.parse(
+          fs.readFileSync(`./plugins/${PluginName_en}/package.json`, `utf-8`),
+        );
+        PluginAuthor = PluginAuthor.author;
+        global.PluginAuthor = PluginAuthor;
+      } catch (error) {
+        logger.info(
+          logger.red(`出现错误！`),
+        );
+        logger.info(
+          logger.blue(`[${PluginName_en}]`),
+          logger.white(`本地获取作者信息失败:`),
+          logger.red(`${error}`),
+        );
+        global.PluginAuthor = `未知作者-`+PluginVersion;
+      }
+    }
   }
 })();
