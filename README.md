@@ -1,6 +1,6 @@
 <div align="center">
 
-# [星落插件](https://blog.yll14.cn/docs/xingluo) V6.3(xingluo-plugin)
+# [星落插件](https://blog.yll14.cn/docs/xingluo) V6.4(xingluo-plugin)
 
 ## 插件功能
 
@@ -14,7 +14,8 @@
 | #星落插件设置 | 设置星落插件       |
 | #一言         | 每天一句           |
 | #每日热搜     | 获取每日热搜       |
-| #ping         | ping地址       |
+| #ping         | ping地址           |
+| #谁艾特我     | 查看近期谁艾特过我 |
 
  <div align="center">
  

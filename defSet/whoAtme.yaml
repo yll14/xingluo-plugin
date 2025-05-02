@@ -1,0 +1,7 @@
+#开关 true 开启 false 关闭
+switch: true
+# 缓存时间 单位：小时
+cacheTime: 24
+# 缓存路径(注意:该目录是已Bot根目录起算)
+#下面这个目录在Bot根目录的data文件夹下 默认为:你的Bot目录/data/at_images/
+cachePath: ./data/at_images/

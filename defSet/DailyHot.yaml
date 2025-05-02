@@ -2,6 +2,7 @@
 switch: true
 #API地址  仅适配DailyHotAPI https://github.com/imsyy/DailyHotApi
 #结尾不要加'/'!!!!
-api: https://api.hot.yll14.cn
+#api:https://api.hot.yll14.cn
+api1: https://hotapi.20081122.xyz
 # 是否显示链接
 showLink: true

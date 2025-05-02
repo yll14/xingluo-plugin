@@ -114,6 +114,18 @@ export function supportGuoba() {
           component: "Switch",
         },
         {
+          field: "Hitokoto.customize",
+          label: "自定义模板",
+          bottomHelpMessage:
+            "输入自定义模板 模板内容请参考以下格式：\nID: ${json.id}\nUUID: ${json.uuid}\n类型: ${json.type}\n句子: ${json.hitokoto}\n作者: ${json.from}\n来自: ${json.from_who}\n创建者: ${json.creator}\n创建者UID: ${json.creator_uid}\n审核者: ${json.reviewer}\n提交来源: ${json.commit_from}\n创建时间: ${time}\n长度: ${json.length}\n",
+          component: "Input",
+          required: false,
+          componentProps: {
+            placeholder:
+              "请输入自定义模板 模板内容请参考以下格式：\nID: ${json.id}\nUUID: ${json.uuid}\n类型: ${json.type}\n句子: ${json.hitokoto}\n作者: ${json.from}\n来自: ${json.from_who}\n创建者: ${json.creator}\n创建者UID: ${json.creator_uid}\n审核者: ${json.reviewer}\n提交来源: ${json.commit_from}\n创建时间: ${time}\n长度: ${json.length}\n",
+          },
+        },
+        {
           label: "每日热搜",
           component: "SOFT_GROUP_BEGIN",
         },
@@ -184,6 +196,38 @@ export function supportGuoba() {
                 value: "b",
               },
             ],
+          },
+        },
+        {
+          label: "谁艾特我",
+          component: "SOFT_GROUP_BEGIN",
+        },
+        {
+          field: "whoAtme.switch",
+          label: "功能开关",
+          bottomHelpMessage: "是否开启",
+          component: "Switch",
+        },
+        {
+          field: "whoAtme.cacheTime",
+          label: "缓存时间",
+          bottomHelpMessage: "缓存时间请输入缓存时间单位小时",
+          component: "InputNumber",
+          required: true,
+          componentProps: {
+            min: 0,
+            max: 10000,
+            placeholder: "请输入缓存时间单位小时",
+          },
+        },
+        {
+          field: "whoAtme.cachePath",
+          label: "缓存路径",
+          bottomHelpMessage: "缓存路径 以Bot根目录为初始路径",
+          component: "Input",
+          required: true,
+          componentProps: {
+            placeholder: "请输入缓存路径 以Bot根目录为初始路径",
           },
         },
       ],

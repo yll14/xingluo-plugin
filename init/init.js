@@ -115,6 +115,33 @@ export default new (class Init {
         );
       }
     }
+    /** whoAtme **/
+    const whoAtmeFilePath = `${configFolder}/whoAtme.yaml`;
+    const defwhoAtmeFilePath = `${defSetFolder}/whoAtme.yaml`;
+    if (!fs.existsSync(whoAtmeFilePath)) {
+      fs.copyFileSync(defwhoAtmeFilePath, whoAtmeFilePath);
+    } else {
+      const defwhoAtme = yaml.parse(
+        fs.readFileSync(defwhoAtmeFilePath, "utf8"),
+      );
+      let whoAtme = yaml.parse(fs.readFileSync(whoAtmeFilePath, "utf8"));
+      let updated = false;
+      for (const key in defwhoAtme) {
+        if (!whoAtme.hasOwnProperty(key)) {
+          whoAtme[key] = defwhoAtme[key];
+          updated = true;
+        }
+      }
+      if (updated) {
+        const updatedConfigYAML = yaml.stringify(whoAtme);
+        fs.writeFileSync(whoAtmeFilePath, updatedConfigYAML, "utf8");
+        logger.info(
+          logger.green(
+            `[${PluginName_en}]${path.basename(whoAtmeFilePath)}配置文件缺少键值，已从/defSet文件夹中更新`,
+          ),
+        );
+      }
+    }
     /*
         if(!fs.existsSync(`./plugins/${PluginName_en}/config/.yaml`)) {
           fs.copyFileSync(`./plugins/${PluginName_en}/defSet/.yaml`, `./plugins/${PluginName_en}/config/.yaml`)
