@@ -1,0 +1,7 @@
+#开关 true 开启 false 关闭
+switch: true
+#API地址  第一条能不改就不改
+#第二条只要是直接返回图片的都可以
+api: 
+- https://yugan.love
+- https://api.junzhao.icu/aili

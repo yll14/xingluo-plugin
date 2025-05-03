@@ -209,6 +209,12 @@ export function supportGuoba() {
           component: "Switch",
         },
         {
+          field: "whoAtme.cacheImage",
+          label: "缓存图片",
+          bottomHelpMessage: "是否开启缓存图片",
+          component: "Switch",
+        },
+        {
           field: "whoAtme.cacheTime",
           label: "缓存时间",
           bottomHelpMessage: "缓存时间请输入缓存时间单位小时",

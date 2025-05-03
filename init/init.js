@@ -142,6 +142,35 @@ export default new (class Init {
         );
       }
     }
+
+    /** Memes **/
+    const MemesFilePath = `${configFolder}/Memes.yaml`;
+    const defMemesFilePath = `${defSetFolder}/Memes.yaml`;
+    if (!fs.existsSync(MemesFilePath)) {
+      fs.copyFileSync(defMemesFilePath, MemesFilePath);
+    } else {
+      const defMemes = yaml.parse(
+        fs.readFileSync(defMemesFilePath, "utf8"),
+      );
+      let Memes = yaml.parse(fs.readFileSync(MemesFilePath, "utf8"));
+      let updated = false;
+      for (const key in defMemes) {
+        if (!Memes.hasOwnProperty(key)) {
+          Memes[key] = defMemes[key];
+          updated = true;
+        }
+      }
+      if (updated) {
+        const updatedConfigYAML = yaml.stringify(Memes);
+        fs.writeFileSync(MemesFilePath, updatedConfigYAML, "utf8");
+        logger.info(
+          logger.green(
+            `[${PluginName_en}]${path.basename(MemesFilePath)}配置文件缺少键值，已从/defSet文件夹中更新`,
+          ),
+        );
+      }
+    }
+
     /*
         if(!fs.existsSync(`./plugins/${PluginName_en}/config/.yaml`)) {
           fs.copyFileSync(`./plugins/${PluginName_en}/defSet/.yaml`, `./plugins/${PluginName_en}/config/.yaml`)

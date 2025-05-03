@@ -21,9 +21,14 @@ Bot.on("message.group", async (e) => {
     if (msg.type == "at") {
       AtQQ.push(msg.qq);
     }
-    if (msg.type == "image") {
+    if (msg.type == "image" && AtQQ.length > 0) {
       imgUrls.push(msg.url);
       try {
+        const { config } = GetConfig(`config`, `whoAtme`);
+        if (!config.cacheImage) {
+          logger.info(logger.blue(`[${PluginName_zh}]图片缓存已关闭，跳过本地保存`));
+          continue;
+        }
         let res = await fetch(msg.url);
         if (res.ok) {
           let ext = path.extname(msg.url).split("?")[0] || ".jpg";
@@ -93,7 +98,7 @@ Bot.on("message.group", async (e) => {
         message: e.raw_message,
         image: imgUrls,
         imageLocal: imgLocalPaths,
-        name: e.nickname,
+        name: e.member.card || e.member.nickname,
         time: e.time,
         messageId: reply ? reply.message_id : "",
       };
@@ -119,7 +124,7 @@ Bot.on("message.group", async (e) => {
         message: e.raw_message,
         image: imgUrls,
         imageLocal: imgLocalPaths,
-        name: e.nickname,
+        name: e.member.card || e.member.nickname,
         time: e.time,
         endTime: dateTime,
         messageId: reply ? reply.message_id : "",
@@ -157,7 +162,7 @@ setInterval(async () => {
         logger.info(
           logger.green(`[${PluginName_zh}]已删除过期图片: ${filePath}`),
         );
-      } catch (e) {}
+      } catch (e) { }
     }
   }
 }, 60 * 1000);
@@ -197,7 +202,7 @@ export class whoAtme extends plugin {
   async whoAtme(e) {
     const { config } = GetConfig(`config`, `whoAtme`);
     if (!config.switch) {
-      return e.reply("功能已关闭");
+      return e.reply(`该功能已关闭`);
     }
     if (!e.isGroup) {
       return e.reply("只支持群聊使用");
@@ -224,9 +229,9 @@ export class whoAtme extends plugin {
       msg.push(
         data[i].messageId
           ? {
-              type: "reply",
-              id: data[i].messageId,
-            }
+            type: "reply",
+            id: data[i].messageId,
+          }
           : "",
       );
       msg.push(data[i].message);
@@ -235,7 +240,7 @@ export class whoAtme extends plugin {
         let localPath = data[i].imageLocal[j];
         let remoteUrl = data[i].image[j];
         if (fs.existsSync(localPath)) {
-          msg.push(`\n图片消息:`);
+          //msg.push(`\n图片消息:`);
           msg.push(segment.image(`file://${localPath}`));
         } else {
           try {
@@ -255,12 +260,14 @@ export class whoAtme extends plugin {
         segment.image(`http://q1.qlogo.cn/g?b=qq&nk=${data[i].User}&s=100`),
       ];
       let Time = formatTime(data[i].time);
-      msg.unshift(
-        `消息发者: ${data[i].name || data[i].User}\n发送者头像:`,
-        ...logo,
-        `发送时间: ${Time}\n消息内容:`,
-      );
-
+     
+     
+        msg.unshift(
+          `消息发者: ${data[i].name||data[i].User}\n`,
+          ...logo,
+          `发送时间: ${Time}\n消息内容:`,
+        );
+      
       msgList.push({
         message: msg,
         user_id: data[i].User,
@@ -323,6 +330,14 @@ export class whoAtme extends plugin {
       const type = action === "开启";
       config.switch = type;
       e.reply(`功能已${type ? "开启" : "关闭"}`);
+    } 
+    
+    else if (action === "图片缓存") {
+      if (value === "开启" || value === "关闭") {
+        const type = value === "开启";
+        config.cacheImage = type;
+        e.reply(`图片缓存已${type ? "开启" : "关闭"}`);
+      }
     } else if (action === "缓存时间") {
       if (!value) {
         return e.reply("请提供有效的缓存时间单位:小时");
@@ -345,7 +360,7 @@ export class whoAtme extends plugin {
   async ViewConfig(e) {
     const { config } = GetConfig(`config`, `whoAtme`);
     e.reply(
-      `谁艾特我配置:\n状态: ${config.switch ? "开启" : "关闭"}\n缓存时间: ${config.cacheTime}小时\n缓存路径: '${config.cachePath}'`,
+      `谁艾特我配置:\n状态: ${config.switch ? "开启" : "关闭"}\n缓存时间: ${config.cacheTime}小时\n图片缓存: ${config.cacheImage ? "开启" : "关闭"}\n缓存路径: '${config.cachePath}'`,
     );
   }
 }
@@ -359,5 +374,6 @@ function formatTime(timestamp) {
   const minutes = String(date.getMinutes()).padStart(2, "0");
   const seconds = String(date.getSeconds()).padStart(2, "0");
 
-  return `${year}年${month}月${day}日 ${hours}时${minutes}分${seconds}秒`;
+  //return `${year}年${month}月${day}日 ${hours}时${minutes}分${seconds}秒`;
+  return `${month}月${day}日 ${hours}:${minutes}`;
 }

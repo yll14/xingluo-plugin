@@ -9,7 +9,8 @@
     "fix": "npx prettier --write **/*.js && npx prettier --write *.js"
   },
   "dependencies": {
-    "iconv-lite": "^0.6.3"
+    "iconv-lite": "^0.6.3",
+    "chalk": "^5.3.0"
   },
   "author": "洛洛",
   "license": "MIT"

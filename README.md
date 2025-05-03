@@ -1,21 +1,24 @@
 <div align="center">
 
-# [星落插件](https://blog.yll14.cn/docs/xingluo) V6.4(xingluo-plugin)
-
-## 插件功能
-
+# [星落插件](https://blog.yll14.cn/docs/xingluo) V6.5(xingluo-plugin)
+[![Security Status](https://www.murphysec.com/platform3/v31/badge/1918466541234647040.svg)](https://www.murphysec.com/console/report/1918466541050097664/1918466541234647040)
  </div>
 
-# 功能命令与描述
+> QQ交流群:[727556008](https://qm.qq.com/cgi-bin/qm/qr?k=LTxwztTEZyjbE-ccpf2xsIT58alGMJMh&jump_from=webapi&authKey=0i4oR6aRVz9us5y3ghnA5dQGWTYPt4H/p4rLa9wLizaL+KLBx+51gd8+bJcu/uml)
 
-| 命令          | 描述               |
-| ------------- | ------------------ |
+# 插件功能
+## 功能命令与描述
+
+| 命令  | 描述  |
+| --------| ---- |
 | #星落帮助     | 获取星落插件的帮助 |
-| #星落插件设置 | 设置星落插件       |
-| #一言         | 每天一句           |
-| #每日热搜     | 获取每日热搜       |
-| #ping         | ping地址           |
+| #星落表情包 | 获取随机表情包的指定关键词 |
+| #星落插件设置 | 设置星落插件 |
+| #一言         | 每天一句 |
+| #每日热搜     | 获取每日热搜 |
+| #ping         | ping地址 |
 | #谁艾特我     | 查看近期谁艾特过我 |
+| #随机表情包 | 获取随机表情包 |
 
  <div align="center">
  
@@ -37,7 +40,7 @@ git clone --depth=1 https://ghproxy.net/https://github.com/yll14/xingluo-plugin.
 ```
 ### 方式二:手动下载插件 (不推荐：后续无法直接更新，需手动再次下载)
 下载仓库解压zip文件将xingluo-plugin-master放入Yunzai/Miao-Yunzai的/plugins目录下重命名去掉后面的<u>-master</u>
-<img src='https://img.yll14.cn/i/2025/02/08/67a70020961d4.png'  alt='Download-xingluo-plugin.png'></img>
+<img src='https://gitee.com/yll14/plugin-framework/raw/master/resources/img/cf114401-ee20-455f-b980-c21bc4cb0df9.png'  alt='Download-xingluo-plugin.png'></img>
 </div>
 
 ### ~~安装依赖 一定要安装依赖!!!~~ 现在不需要
@@ -68,6 +71,15 @@ pnpm install --filter=xingluo-plugin
 - ` 2443958507@qq.com`
 
 如果可以的话 给本项目个star 来支持本项目 您的支持就是给我的最大的鼓励 谢谢
+
+## 鸣谢 
+>  **_不分先后顺序_**
+
+| 贡献人名单 | 类型 | 备注 |
+| :----: | :----: | :----: |
+| 原来是原 | 微信赞助 | 金额:23.33元 |
+
+
 
 ## 免责声明
 
