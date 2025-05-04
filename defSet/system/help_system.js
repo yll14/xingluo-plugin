@@ -30,7 +30,7 @@ export const helpList = [
     group: "可不加#前缀或使用/|代替",
     list: [
       {
-        icon: 31,
+        icon: 176,
         title: "#一言",
         desc: "每天一句",
       },
@@ -40,17 +40,22 @@ export const helpList = [
         desc: "获取每日热搜",
       },
       {
-        icon: 31,
+        icon: 8,
         title: "#ping",
         desc: "ping地址",
       },
       {
-        icon: 31,
+        icon: 101,
         title: "#谁艾特我",
         desc: "查看近期谁艾特过我",
       },
       {
-        icon: 26,
+        icon: 180,
+        title: "#星落表情包",
+        desc: "随机表情包",
+      },
+      {
+        icon: 22,
         title: "若发现Bug 请反馈或更改后提出pr谢谢您的帮助",
         desc: "反馈方式QQ:2243958507,邮箱:ll@yll14.cn",
       },
