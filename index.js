@@ -11,7 +11,7 @@ logger.info(chalk.cyan('---------ヾ(✿ﾟ▽ﾟ)ノ---------'));
 logger.info(chalk.white(`${PluginName_zh}载入中！`));
 logger.info(chalk.cyan(`一言:${BotHitokoto}`));
 logger.info(chalk.cyan('-----------------------------'));
-let then = 0;
+let then = false;
 
 if (!initMsg.boolean) {
   if (PluginloadingconsolecharacterdrawingswitchERROR) {
@@ -37,7 +37,7 @@ if (!initMsg.boolean) {
   logger.error(chalk.red("  * \`=---='"));
   logger.error(chalk.red("  *          ............................................."));
   logger.error(chalk.red("  *           佛曰：bug泛滥，我已瘫痪！"));
-  then = 1;
+  then = true;
   } 
   throw new Error(`${PluginName_en}载入失败`);
 }
