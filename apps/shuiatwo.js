@@ -26,7 +26,9 @@ Bot.on("message.group", async (e) => {
       try {
         const { config } = GetConfig(`config`, `whoAtme`);
         if (!config.cacheImage) {
-          logger.info(logger.blue(`[${PluginName_zh}]图片缓存已关闭，跳过本地保存`));
+          logger.info(
+            logger.blue(`[${PluginName_zh}]图片缓存已关闭，跳过本地保存`),
+          );
           continue;
         }
         let res = await fetch(msg.url);
@@ -162,7 +164,7 @@ setInterval(async () => {
         logger.info(
           logger.green(`[${PluginName_zh}]已删除过期图片: ${filePath}`),
         );
-      } catch (e) { }
+      } catch (e) {}
     }
   }
 }, 60 * 1000);
@@ -229,9 +231,9 @@ export class whoAtme extends plugin {
       msg.push(
         data[i].messageId
           ? {
-            type: "reply",
-            id: data[i].messageId,
-          }
+              type: "reply",
+              id: data[i].messageId,
+            }
           : "",
       );
       msg.push(data[i].message);
@@ -260,14 +262,13 @@ export class whoAtme extends plugin {
         segment.image(`http://q1.qlogo.cn/g?b=qq&nk=${data[i].User}&s=100`),
       ];
       let Time = formatTime(data[i].time);
-     
-     
-        msg.unshift(
-          `消息发者: ${data[i].name||data[i].User}\n`,
-          ...logo,
-          `发送时间: ${Time}\n消息内容:`,
-        );
-      
+
+      msg.unshift(
+        `消息发者: ${data[i].name || data[i].User}\n`,
+        ...logo,
+        `发送时间: ${Time}\n消息内容:`,
+      );
+
       msgList.push({
         message: msg,
         user_id: data[i].User,
@@ -330,9 +331,7 @@ export class whoAtme extends plugin {
       const type = action === "开启";
       config.switch = type;
       e.reply(`功能已${type ? "开启" : "关闭"}`);
-    } 
-    
-    else if (action === "图片缓存") {
+    } else if (action === "图片缓存") {
       if (value === "开启" || value === "关闭") {
         const type = value === "开启";
         config.cacheImage = type;

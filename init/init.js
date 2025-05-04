@@ -151,9 +151,7 @@ export default new (class Init {
     if (!fs.existsSync(MemesFilePath)) {
       fs.copyFileSync(defMemesFilePath, MemesFilePath);
     } else {
-      const defMemes = yaml.parse(
-        fs.readFileSync(defMemesFilePath, "utf8"),
-      );
+      const defMemes = yaml.parse(fs.readFileSync(defMemesFilePath, "utf8"));
       let Memes = yaml.parse(fs.readFileSync(MemesFilePath, "utf8"));
       let updated = false;
       for (const key in defMemes) {
@@ -232,23 +230,19 @@ export default new (class Init {
       "https://v1.hitokoto.cn/",
       "https://international.v1.hitokoto.cn",
     ];
-    try{  
-    let Hitokoto = await fetch(api[0]).then(
-      (res) => res.json()
-    );
-    Hitokoto = Hitokoto.hitokoto;
-    global.BotHitokoto = Hitokoto;
+    try {
+      let Hitokoto = await fetch(api[0]).then((res) => res.json());
+      Hitokoto = Hitokoto.hitokoto;
+      global.BotHitokoto = Hitokoto;
     } catch (error) {
       try {
-        let Hitokoto = await fetch(api[1]).then(
-          (res) => res.json()
-        );
+        let Hitokoto = await fetch(api[1]).then((res) => res.json());
         Hitokoto = Hitokoto.hitokoto;
         global.BotHitokoto = Hitokoto;
       } catch (error) {
         logger.info(logger.blue(`全局随机一言获取失败`));
-        global.BotHitokoto = '';
+        global.BotHitokoto = "";
       }
-    } 
+    }
   }
 })();

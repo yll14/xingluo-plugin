@@ -51,7 +51,6 @@ export class xingluoHelp extends plugin {
     let configFolder = `${PluginPath}/config`;
     const SettinghelpFilePath = `${configFolder}/Settinghelp.yaml`;
     if (fs.existsSync(SettinghelpFilePath)) {
-
       logger.info(
         logger.green(
           `[${PluginName_en}]:config中存在Settinghelp.yaml配置文件，已从/config文件夹中读取`,
