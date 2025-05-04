@@ -2,6 +2,7 @@ import yaml from "yaml";
 import fs from "node:fs";
 import { _PATH, PluginName_en, PluginPath } from "../function/function.js";
 import path from "node:path";
+import { Hitokoto } from "../apps/Hitokoto.js";
 
 export default new (class Init {
   async init() {
@@ -9,6 +10,7 @@ export default new (class Init {
       await this.loadConfig();
       await this.globalVersion();
       await this.globalAuthor();
+      await this.globalHitokoto();
       return { boolean: true, msg: null };
     } catch (error) {
       return { boolean: false, msg: error };
@@ -224,5 +226,29 @@ export default new (class Init {
         global.PluginAuthor = `未知作者-` + PluginVersion;
       }
     }
+  }
+  async globalHitokoto() {
+    let api = [
+      "https://v1.hitokoto.cn/",
+      "https://international.v1.hitokoto.cn",
+    ];
+    try{  
+    let Hitokoto = await fetch(api[0]).then(
+      (res) => res.json()
+    );
+    Hitokoto = Hitokoto.hitokoto;
+    global.BotHitokoto = Hitokoto;
+    } catch (error) {
+      try {
+        let Hitokoto = await fetch(api[1]).then(
+          (res) => res.json()
+        );
+        Hitokoto = Hitokoto.hitokoto;
+        global.BotHitokoto = Hitokoto;
+      } catch (error) {
+        logger.info(logger.blue(`全局随机一言获取失败`));
+        global.BotHitokoto = '';
+      }
+    } 
   }
 })();
