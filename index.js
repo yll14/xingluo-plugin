@@ -3,15 +3,18 @@ import Init from "./init/init.js";
 import { GetConfig, _PATH, PluginName_en, PluginName_zh } from "./function/function.js";
 import chalk from 'chalk'
 let { config } = GetConfig(`defSet/system`, `system`);
-let PluginloadingconsolecharacterdrawingswitchA = config.Pluginloadingconsolecharacterdrawingswitch;
+let PluginloadingconsolecharacterdrawingswitchDONE = config.Pluginloadingconsolecharacterdrawingswitch[0];
+let PluginloadingconsolecharacterdrawingswitchERROR = config.Pluginloadingconsolecharacterdrawingswitch[1];
 const startTime = Date.now()
 let initMsg = await Init.init();
 logger.info(chalk.cyan('---------ヾ(✿ﾟ▽ﾟ)ノ---------'));
 logger.info(chalk.white(`${PluginName_zh}载入中！`));
 logger.info(chalk.cyan(`一言:${BotHitokoto}`));
 logger.info(chalk.cyan('-----------------------------'));
+let then = 0;
 
 if (!initMsg.boolean) {
+  if (PluginloadingconsolecharacterdrawingswitchERROR) {
   logger.error(logger.red(`${PluginName_zh}插件载入失败`));
   logger.error(initMsg.msg);
   logger.error(chalk.red("  * _ooOoo_"));
@@ -34,6 +37,8 @@ if (!initMsg.boolean) {
   logger.error(chalk.red("  * \`=---='"));
   logger.error(chalk.red("  *          ............................................."));
   logger.error(chalk.red("  *           佛曰：bug泛滥，我已瘫痪！"));
+  then = 1;
+  } 
   throw new Error(`${PluginName_en}载入失败`);
 }
 
@@ -61,28 +66,30 @@ for (let i in files) {
   let name = files[i].replace(".js", "");
 
   if (ret[i].status != "fulfilled") {
-    logger.error(`载入插件错误：${logger.red(name)}`);
-    logger.error(ret[i].reason);
-    logger.warn(chalk.red("  * _ooOoo_"));
-    logger.warn(chalk.red("  * o8888888o"));
-    logger.warn(chalk.red("  * 88\" . \"88"));
-    logger.warn(chalk.red("  * (| -_- |)"));
-    logger.warn(chalk.red("  *  O\\ = /O"));
-    logger.warn(chalk.red("  * ___/\\'---'\\____"));
-    logger.warn(chalk.red("  * .   ' \\\\| |// \`."));
-    logger.warn(chalk.red("  * / \\\\||| : |||// \\"));
-    logger.warn(chalk.red("  * / _||||| -:- |||||- \\"));
-    logger.warn(chalk.red("  * | | \\\\\\ - /// | |"));
-    logger.warn(chalk.red("  * | \\_| ''\\---/'' | |"));
-    logger.warn(chalk.red("  * \\ .-\\__ \`-\` ___/-. /"));
-    logger.warn(chalk.red("  * ___\`. .' /--.--\\ \`. . __"));
-    logger.warn(chalk.red("  * .\"\" '< \`.___\\_<|>_/___.' >'\"\""));
-    logger.warn(chalk.red("  * | | : \`- \\\`.;\\\`\\ _ /\\\`;.\`/ - \` : | |"));
-    logger.warn(chalk.red("  * \\ \\ \`-. \\_ __\\ /__ _/ .-\` / /"));
-    logger.warn(chalk.red("  * ======\`-.____\`-.___\\_____/___.-\`____.-'======"));
-    logger.warn(chalk.red("  * \`=---='"));
-    logger.warn(chalk.red("  *          ............................................."));
-    logger.warn(chalk.red("  *           佛曰：bug泛滥，我已瘫痪！"));
+    if (then && PluginloadingconsolecharacterdrawingswitchERROR) {
+      logger.error(`载入插件错误：${logger.red(name)}`);
+      logger.error(ret[i].reason);
+      logger.warn(chalk.red("  * _ooOoo_"));
+      logger.warn(chalk.red("  * o8888888o"));
+      logger.warn(chalk.red("  * 88\" . \"88"));
+      logger.warn(chalk.red("  * (| -_- |)"));
+      logger.warn(chalk.red("  *  O\\ = /O"));
+      logger.warn(chalk.red("  * ___/\\'---'\\____"));
+      logger.warn(chalk.red("  * .   ' \\\\| |// \`."));
+      logger.warn(chalk.red("  * / \\\\||| : |||// \\"));
+      logger.warn(chalk.red("  * / _||||| -:- |||||- \\"));
+      logger.warn(chalk.red("  * | | \\\\\\ - /// | |"));
+      logger.warn(chalk.red("  * | \\_| ''\\---/'' | |"));
+      logger.warn(chalk.red("  * \\ .-\\__ \`-\` ___/-. /"));
+      logger.warn(chalk.red("  * ___\`. .' /--.--\\ \`. . __"));
+      logger.warn(chalk.red("  * .\"\" '< \`.___\\_<|>_/___.' >'\"\""));
+      logger.warn(chalk.red("  * | | : \`- \\\`.;\\\`\\ _ /\\\`;.\`/ - \` : | |"));
+      logger.warn(chalk.red("  * \\ \\ \`-. \\_ __\\ /__ _/ .-\` / /"));
+      logger.warn(chalk.red("  * ======\`-.____\`-.___\\_____/___.-\`____.-'======"));
+      logger.warn(chalk.red("  * \`=---='"));
+      logger.warn(chalk.red("  *          ............................................."));
+      logger.warn(chalk.red("  *           佛曰：bug泛滥，我已瘫痪！"));
+    }
     failureCount++;
     continue;
   }
@@ -90,7 +97,7 @@ for (let i in files) {
   successCount++;
 }
 
-if (PluginloadingconsolecharacterdrawingswitchA) {
+if (initMsg.boolean && ret[i].status =="fulfilled" && PluginloadingconsolecharacterdrawingswitchDONE) {
   logger.warn(chalk.red(" ......................阿弥陀佛......................"));
   logger.warn(chalk.red("                       _oo0oo_                      "));
   logger.warn(chalk.red("                      o8888888o                     "));

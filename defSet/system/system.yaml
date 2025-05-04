@@ -1,2 +1,6 @@
 #欸？被发现了？ 这里是字符画开关哦~
-Pluginloadingconsolecharacterdrawingswitch: true
+Pluginloadingconsolecharacterdrawingswitch:
+# 加载完成
+- true
+# 加载失败
+- true
