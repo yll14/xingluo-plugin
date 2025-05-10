@@ -43,10 +43,14 @@ git clone --depth=1 https://ghproxy.net/https://github.com/yll14/xingluo-plugin.
 <img src='https://gitee.com/yll14/plugin-framework/raw/master/resources/img/cf114401-ee20-455f-b980-c21bc4cb0df9.png'  alt='Download-xingluo-plugin.png'></img>
 </div>
 
-### ~~安装依赖 一定要安装依赖!!!~~ 现在不需要
+### 安装依赖 一定要安装依赖!!!
 
 ```
 pnpm install --filter=xingluo-plugin
+```
+或者
+```
+pnpm i
 ```
 
 ## 其他
