@@ -118,7 +118,7 @@ for (let i in files) {
 
 if (
   initMsg.boolean &&
-  ret[i].status == "fulfilled" &&
+  successCount > 0 &&
   PluginloadingconsolecharacterdrawingswitchDONE
 ) {
   logger.warn(
