@@ -64,6 +64,9 @@
       title: "#星落插件谁艾特我设置缓存时间 <时间>"
       desc: "设置whoAtme的缓存时间"
     - icon: Setting
+      title: "#星落插件谁艾特我设置逆序遍历 <开启/关闭>"
+      desc: "开启/关闭whoAtme的逆序遍历"
+    - icon: Setting
       title: "#星落插件谁艾特我设置缓存目录 <目录:以Bot根目录为初始路径>"
       desc: "设置whoAtme的图片缓存目录"
     - icon: Setting

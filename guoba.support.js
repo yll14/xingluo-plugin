@@ -1,5 +1,5 @@
 import setting from "./function/setting.js";
-import lodash from "lodash";
+import lodash, { compact } from "lodash";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
@@ -213,6 +213,12 @@ export function supportGuoba() {
             max: 96,
             placeholder: "请输入缓存时间单位小时",
           },
+        },
+        {
+          field: "whoAtme.reverse",
+          label: "逆序遍历",
+          bottomHelpMessage: "是否开启逆序遍历",
+          component: "Switch",
         },
         {
           field: "whoAtme.cachePath",

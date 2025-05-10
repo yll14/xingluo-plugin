@@ -4,6 +4,8 @@ switch: true
 cacheTime: 24
 # 图片缓存 true 开启 false 关闭
 cacheImage: true
+# 逆序遍历 true 开启 false 关闭
+reverse: false
 # 缓存路径(注意:该目录是已Bot根目录起算)
 #下面这个目录在Bot根目录的data文件夹下 默认为:你的Bot目录/data/at_images/
 cachePath: ./data/at_images/

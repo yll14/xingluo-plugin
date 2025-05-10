@@ -226,55 +226,108 @@ export class whoAtme extends plugin {
     }
     let msgList = [];
 
-    for (let i = 0; i < data.length; i++) {
-      let msg = [];
-      msg.push(
-        data[i].messageId
-          ? {
-              type: "reply",
-              id: data[i].messageId,
-            }
-          : "",
-      );
-      msg.push(data[i].message);
+    if (config.reverse) {
+      for (let i = data.length - 1; i >= 0; i--) {
+        let msg = [];
+        msg.push(
+          data[i].messageId
+            ? {
+                type: "reply",
+                id: data[i].messageId,
+              }
+            : "",
+        );
+        msg.push(data[i].message);
 
-      for (let j = 0; j < data[i].image.length; j++) {
-        let localPath = data[i].imageLocal[j];
-        let remoteUrl = data[i].image[j];
-        if (fs.existsSync(localPath)) {
-          //msg.push(`\n图片消息:`);
-          msg.push(segment.image(`file://${localPath}`));
-        } else {
-          try {
-            let res = await fetch(remoteUrl, { method: "HEAD" });
-            if (res.ok) {
-              msg.push(segment.image(remoteUrl));
-            } else {
+        for (let j = 0; j < data[i].image.length; j++) {
+          let localPath = data[i].imageLocal[j];
+          let remoteUrl = data[i].image[j];
+          if (fs.existsSync(localPath)) {
+            //msg.push(`\n图片消息:`);
+            msg.push(segment.image(`file://${localPath}`));
+          } else {
+            try {
+              let res = await fetch(remoteUrl, { method: "HEAD" });
+              if (res.ok) {
+                msg.push(segment.image(remoteUrl));
+              } else {
+                msg.push("[图片](已过期)");
+              }
+            } catch (err) {
               msg.push("[图片](已过期)");
             }
-          } catch (err) {
-            msg.push("[图片](已过期)");
           }
         }
+
+        let logo = [
+          segment.image(`http://q1.qlogo.cn/g?b=qq&nk=${data[i].User}&s=100`),
+        ];
+        let Time = formatTime(data[i].time);
+
+        msg.unshift(
+          `消息发者: ${data[i].name || data[i].User}\n`,
+          ...logo,
+          `发送时间: ${Time}\n消息内容:`,
+        );
+
+        msgList.push({
+          message: msg,
+          user_id: data[i].User,
+          nickname: data[i].name,
+          time: data[i].time,
+        });
       }
+    } else {
+      for (let i = 0; i < data.length; i++) {
+        let msg = [];
+        msg.push(
+          data[i].messageId
+            ? {
+                type: "reply",
+                id: data[i].messageId,
+              }
+            : "",
+        );
+        msg.push(data[i].message);
 
-      let logo = [
-        segment.image(`http://q1.qlogo.cn/g?b=qq&nk=${data[i].User}&s=100`),
-      ];
-      let Time = formatTime(data[i].time);
+        for (let j = 0; j < data[i].image.length; j++) {
+          let localPath = data[i].imageLocal[j];
+          let remoteUrl = data[i].image[j];
+          if (fs.existsSync(localPath)) {
+            //msg.push(`\n图片消息:`);
+            msg.push(segment.image(`file://${localPath}`));
+          } else {
+            try {
+              let res = await fetch(remoteUrl, { method: "HEAD" });
+              if (res.ok) {
+                msg.push(segment.image(remoteUrl));
+              } else {
+                msg.push("[图片](已过期)");
+              }
+            } catch (err) {
+              msg.push("[图片](已过期)");
+            }
+          }
+        }
 
-      msg.unshift(
-        `消息发者: ${data[i].name || data[i].User}\n`,
-        ...logo,
-        `发送时间: ${Time}\n消息内容:`,
-      );
+        let logo = [
+          segment.image(`http://q1.qlogo.cn/g?b=qq&nk=${data[i].User}&s=100`),
+        ];
+        let Time = formatTime(data[i].time);
 
-      msgList.push({
-        message: msg,
-        user_id: data[i].User,
-        nickname: data[i].name,
-        time: data[i].time,
-      });
+        msg.unshift(
+          `消息发者: ${data[i].name || data[i].User}\n`,
+          ...logo,
+          `发送时间: ${Time}\n消息内容:`,
+        );
+
+        msgList.push({
+          message: msg,
+          user_id: data[i].User,
+          nickname: data[i].name,
+          time: data[i].time,
+        });
+      }
     }
 
     let forwardMsg = await e.group.makeForwardMsg(msgList);
@@ -292,6 +345,7 @@ export class whoAtme extends plugin {
           `<title color="#777777" size="26">点击显示内容</title>`,
         );
     }
+    await e.reply(`当前为逆序遍历，新消息在上旧消息在下`, true);
     await e.reply(forwardMsg);
     return false;
   }
@@ -337,6 +391,9 @@ export class whoAtme extends plugin {
         config.cacheImage = type;
         e.reply(`图片缓存已${type ? "开启" : "关闭"}`);
       }
+    } else if (action === "逆序遍历") {
+      config.reverse = value === "开启";
+      e.reply(`逆序已${value === "开启" ? "开启" : "关闭"}`);
     } else if (action === "缓存时间") {
       if (!value) {
         return e.reply("请提供有效的缓存时间单位:小时");
