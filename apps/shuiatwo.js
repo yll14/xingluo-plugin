@@ -4,7 +4,11 @@ import path from "path";
 import fetch from "node-fetch";
 import { pipeline } from "stream/promises";
 import { Readable } from "stream";
-import { GetConfig, PluginName_zh } from "../function/function.js";
+import { 
+  GetConfig,
+  PluginName_zh,
+  saveConfig,
+} from "../function/function.js";
 
 Bot.on("message.group", async (e) => {
   const { config } = GetConfig(`config`, `whoAtme`);
@@ -192,10 +196,12 @@ export class whoAtme extends plugin {
         {
           reg: /^[#/!]?(xl|星落|xingluo)(插件)?who|谁(艾特|@|at)我设置(.*)$/i,
           fnc: "Setting",
+          permission: "master",
         },
         {
           reg: /^[#/!]?(xl|星落|xingluo)(插件)?(设置)?查看who|谁(艾特|@|at)我配置$/i,
           fnc: "ViewConfig",
+          permission: "master",
         },
       ],
     });
@@ -392,8 +398,9 @@ export class whoAtme extends plugin {
         e.reply(`图片缓存已${type ? "开启" : "关闭"}`);
       }
     } else if (action === "逆序遍历") {
-      config.reverse = value === "开启";
-      e.reply(`逆序已${value === "开启" ? "开启" : "关闭"}`);
+      const type = value === "开启";
+      config.reverse = type;
+      e.reply(`逆序已${type ? "开启" : "关闭"}`);
     } else if (action === "缓存时间") {
       if (!value) {
         return e.reply("请提供有效的缓存时间单位:小时");
@@ -410,13 +417,14 @@ export class whoAtme extends plugin {
     try {
       saveConfig("whoAtme", config);
     } catch (error) {
-      return e.reply("更新配置失败，请稍后再试");
+      logger.error(error);
+      return e.reply(`更新配置失败，请稍后再试\n错误信息:${error}`);
     }
   }
   async ViewConfig(e) {
     const { config } = GetConfig(`config`, `whoAtme`);
     e.reply(
-      `谁艾特我配置:\n状态: ${config.switch ? "开启" : "关闭"}\n缓存时间: ${config.cacheTime}小时\n图片缓存: ${config.cacheImage ? "开启" : "关闭"}\n缓存路径: '${config.cachePath}'`,
+      `谁艾特我配置:\n状态: ${config.switch ? "开启" : "关闭"}\n缓存时间: ${config.cacheTime}小时\n图片缓存: ${config.cacheImage ? "开启" : "关闭"}\n逆序遍历: ${config.reverse ? "开启" : "关闭"}\n缓存路径: '${config.cachePath}'`,
     );
   }
 }

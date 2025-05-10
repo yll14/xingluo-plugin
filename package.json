@@ -1,7 +1,7 @@
 {
   "name": "xingluo-plugin",
   "PluginName": "星落插件",
-  "version": "V6.5 - 1[5.04加更版(无更新日志)]",
+  "version": "V6.5_5.10优化版",
   "description": "luoluo-plugin的重构版本",
   "type": "module",
   "main": "index.js",

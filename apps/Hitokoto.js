@@ -1,5 +1,9 @@
 import fetch from "node-fetch";
-import { GetConfig, PluginName_zh } from "../function/function.js";
+import {
+  GetConfig,
+  PluginName_zh,
+  saveConfig,
+} from "../function/function.js";
 import EventEmitter from "events";
 
 export class Hitokoto extends plugin {
@@ -18,6 +22,7 @@ export class Hitokoto extends plugin {
         {
           reg: /^[#/!]?(xl|星落|xingluo)(插件)?一言设置(.*)$/i,
           fnc: "Setting",
+          permission: "master",
         },
         {
           reg: /^[#/!]?(xl|星落|xingluo)(插件)?(设置)?查看一言句子类型$/i,
@@ -26,6 +31,7 @@ export class Hitokoto extends plugin {
         {
           reg: /^[#/!]?(xl|星落|xingluo)(插件)?(设置)?查看一言配置$/i,
           fnc: "ViewConfig",
+          permission: "master",
         },
       ],
     });
@@ -177,7 +183,8 @@ export class Hitokoto extends plugin {
     try {
       saveConfig("Hitokoto", config);
     } catch (error) {
-      return e.reply("更新配置失败，请稍后再试");
+      logger.error(error);
+      return e.reply(`更新配置失败，请稍后再试\n错误信息:${error}`);
     }
   }
   async ViewSentenceType(e) {

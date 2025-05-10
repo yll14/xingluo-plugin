@@ -3,6 +3,7 @@ import {
   PluginName_en,
   PluginName_zh,
   GetConfig,
+  saveConfig,
 } from "../function/function.js";
 import iconv from "iconv-lite";
 import os from "os";
@@ -22,10 +23,12 @@ export class Ping extends plugin {
         {
           reg: /^[#/!]?(xl|星落|xingluo)(插件)?ping设置(.*)$/i,
           fnc: "Setting",
+          permission: "master",
         },
         {
           reg: /^[#/!]?(xl|星落|xingluo)(插件)?(设置)?查看ping配置$/i,
           fnc: "ViewConfig",
+          permission: "master",
         },
       ],
     });
@@ -91,7 +94,8 @@ export class Ping extends plugin {
     try {
       saveConfig("Ping", config);
     } catch (error) {
-      return e.reply("更新配置失败，请稍后再试");
+      logger.error(error);
+      return e.reply(`更新配置失败，请稍后再试\n错误信息:${error}`);
     }
   }
 

@@ -1,6 +1,6 @@
 <div align="center">
 
-# [星落插件](https://blog.yll14.cn/docs/xingluo) V6.5(xingluo-plugin)
+# [星落插件](https://blog.yll14.cn/docs/xingluo) V6.5_5.10优化版(xingluo-plugin)
 [![Security Status](https://www.murphysec.com/platform3/v31/badge/1918466541234647040.svg)](https://www.murphysec.com/console/report/1918466541050097664/1918466541234647040)
  </div>
 
