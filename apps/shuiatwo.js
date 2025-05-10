@@ -351,7 +351,6 @@ export class whoAtme extends plugin {
           `<title color="#777777" size="26">点击显示内容</title>`,
         );
     }
-    await e.reply(`当前为逆序遍历，新消息在上旧消息在下`, true);
     await e.reply(forwardMsg);
     return false;
   }
@@ -379,7 +378,7 @@ export class whoAtme extends plugin {
   }
   async Setting(e) {
     const { config } = GetConfig(`config`, `whoAtme`);
-    const match = e.msg.match(/(开启|关闭|缓存时间|缓存路径)\s*(.*)/);
+    const match = e.msg.match(/(开启|关闭|缓存时间|缓存路径|逆序遍历)\s*(.*)/);
     if (!match) {
       return e.reply("命令格式错误或未匹配");
     }
@@ -400,7 +399,7 @@ export class whoAtme extends plugin {
     } else if (action === "逆序遍历") {
       const type = value === "开启";
       config.reverse = type;
-      e.reply(`逆序已${type ? "开启" : "关闭"}`);
+      e.reply(`逆序遍历已${type ? "开启" : "关闭"}`);
     } else if (action === "缓存时间") {
       if (!value) {
         return e.reply("请提供有效的缓存时间单位:小时");
