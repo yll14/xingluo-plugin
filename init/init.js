@@ -2,7 +2,6 @@ import yaml from "yaml";
 import fs from "node:fs";
 import { _PATH, PluginName_en, PluginPath } from "../function/function.js";
 import path from "node:path";
-import { Hitokoto } from "../apps/Hitokoto.js";
 
 export default new (class Init {
   async init() {
@@ -194,7 +193,7 @@ export default new (class Init {
   async globalAuthor() {
     try {
       // 网络获取
-      let PluginAuthor = await fetch(`https://web.yll14.cn?type=author`).then(
+      let PluginAuthor = await fetch(`https://cdn.file.yll14.cn/author.json`).then(
         (res) => res.json(),
       );
       PluginAuthor = PluginAuthor.author;

@@ -46,9 +46,13 @@ export class Ping extends plugin {
       return false;
     }
 
-    if (config.Networknodes) {
+    // 判断是否启用节点
+    const nodeEnabled = config.Networknodes || config.useNetworknodes;
+    if (nodeEnabled) {
+      // 判断是否启用双节点
+      const useDoubleNode = config.useDoubleNode; // 你实际的配置项名
       try {
-        const results = await this.fetchPingData(config, msg);
+        const results = await this.fetchPingData(config, msg, useDoubleNode);
         const combinedResults = results.join("\n\n");
         e.reply(combinedResults);
       } catch (error) {
@@ -56,6 +60,7 @@ export class Ping extends plugin {
         e.reply("无法连接到API，请稍后再试");
       }
     } else {
+      // 节点未启用，直接本地ping
       try {
         const pingResult = await this.runPingCommand(msg);
         e.reply(pingResult);
@@ -106,8 +111,8 @@ export class Ping extends plugin {
     );
   }
 
-  async fetchPingData(config, msg) {
-    const nodeIndices = config.useNetworknodes
+  async fetchPingData(config, msg, useDoubleNode) {
+    const nodeIndices = useDoubleNode
       ? [0, 1]
       : [config.node === "a" ? 0 : 1];
     const requests = nodeIndices.map((index) =>

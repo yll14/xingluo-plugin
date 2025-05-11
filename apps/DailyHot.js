@@ -67,7 +67,7 @@ export class Hitokoto extends plugin {
       ? e.msg.match(new RegExp(`(${typeMatch})`, "i"))[1]
       : null;
     const route = routes.find((r) => r.name === type);
-    let api = config.api1 + route.path;
+    let api = config.api + route.path;
     const response = await fetch(api);
     const data = await response.json();
     const topItems = data.data.slice(0, 6);

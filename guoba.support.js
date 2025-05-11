@@ -1,5 +1,5 @@
 import setting from "./function/setting.js";
-import lodash, { compact } from "lodash";
+import lodash from "lodash";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
@@ -11,7 +11,7 @@ export function supportGuoba() {
     pluginInfo: {
       name: `${PluginName_en}`,
       title: `${PluginName_zh}(${PluginName_en})`,
-      author: PluginAuthor,
+      author: "洛洛",
       authorLink: "https://gitee.com/yll14/",
       link: "https://gitee.com/yll14/xingluo-plugin",
       showInMenu: "auto",
