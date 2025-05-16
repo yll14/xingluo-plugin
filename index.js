@@ -16,7 +16,7 @@ const startTime = Date.now();
 let initMsg = await Init.init();
 logger.info(chalk.cyan("---------ヾ(✿ﾟ▽ﾟ)ノ---------"));
 logger.info(chalk.white(`${PluginName_zh}载入中！`));
-logger.info(chalk.cyan(`一言:${BotHitokoto}`));
+logger.info(chalk.cyan(`一言:${global.XINGLUO.BotHitokoto}`));
 logger.info(chalk.cyan("-----------------------------"));
 let then = false;
 
@@ -194,7 +194,7 @@ logger.info(chalk.green(`${PluginName_zh}插件载入完成`));
 logger.info(`成功加载：${chalk.green(successCount)} 个`);
 logger.info(`加载失败：${chalk.red(failureCount)} 个`);
 logger.info(`总耗时：${chalk.yellow(elapsedTime)} 毫秒`);
-logger.info(chalk.green(`Created By ` + PluginAuthor));
+logger.info(chalk.green(`Created By ` + global.XINGLUO.PluginAuthor));
 logger.info(chalk.cyan("-------------------"));
 
 export { apps };

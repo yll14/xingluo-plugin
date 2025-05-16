@@ -63,8 +63,8 @@ export class xingluoHelp extends plugin {
         cwd: _PATH,
         iconPath: `${_PATH}/plugins/${PluginName_en}/resources/`,
         Data: config,
-        version: PluginVersion,
-        author: PluginAuthor,
+        version: global.XINGLUO.PluginVersion,
+        author: global.XINGLUO.PluginAuthor,
       });
       e.reply(img);
     } else {
@@ -76,8 +76,8 @@ export class xingluoHelp extends plugin {
         cwd: _PATH,
         iconPath: `${_PATH}/plugins/${PluginName_en}/resources/`,
         Data: config,
-        version: PluginVersion,
-        author: PluginAuthor,
+        version: global.XINGLUO.PluginVersion,
+        author: global.XINGLUO.PluginAuthor,
       });
       e.reply(img);
     }
@@ -101,8 +101,8 @@ export class xingluoHelp extends plugin {
         cwd: _PATH,
         iconPath: `${_PATH}/plugins/${PluginName_en}/resources/`,
         Data: config,
-        version: PluginVersion,
-        author: PluginAuthor,
+        version: global.XINGLUO.PluginVersion,
+        author: global.XINGLUO.PluginAuthor,
       });
       e.reply(img);
     } else {
@@ -113,8 +113,8 @@ export class xingluoHelp extends plugin {
         cwd: _PATH,
         iconPath: `${_PATH}/plugins/${PluginName_en}/resources/`,
         Data: config,
-        version: PluginVersion,
-        author: PluginAuthor,
+        version: global.XINGLUO.PluginVersion,
+        author: global.XINGLUO.PluginAuthor,
       });
       e.reply(img);
     }
@@ -138,8 +138,8 @@ export class xingluoHelp extends plugin {
         cwd: _PATH,
         iconPath: `${_PATH}/plugins/${PluginName_en}/resources/`,
         Data: config,
-        version: PluginVersion,
-        author: PluginAuthor,
+        version: global.XINGLUO.PluginVersion,
+        author: global.XINGLUO.PluginAuthor,
       });
       e.reply(img);
     } else {
@@ -150,8 +150,8 @@ export class xingluoHelp extends plugin {
         cwd: _PATH,
         iconPath: `${_PATH}/plugins/${PluginName_en}/resources/`,
         Data: config,
-        version: PluginVersion,
-        author: PluginAuthor,
+        version: global.XINGLUO.PluginVersion,
+        author: global.XINGLUO.PluginAuthor,
       });
       e.reply(img);
     }

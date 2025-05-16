@@ -5,6 +5,7 @@ import path from "node:path";
 
 export default new (class Init {
   async init() {
+    if (!global.XINGLUO) global.XINGLUO = {};
     try {
       await this.loadConfig();
       await this.globalVersion();
@@ -188,7 +189,7 @@ export default new (class Init {
       fs.readFileSync(`./plugins/${PluginName_en}/package.json`, `utf-8`),
     );
     PluginVersion = PluginVersion.version;
-    global.PluginVersion = PluginVersion;
+    global.XINGLUO.PluginVersion = PluginVersion;
   }
   async globalAuthor() {
     try {
@@ -197,7 +198,7 @@ export default new (class Init {
         (res) => res.json(),
       );
       PluginAuthor = PluginAuthor.author;
-      global.PluginAuthor = PluginAuthor;
+      global.XINGLUO.PluginAuthor = PluginAuthor;
     } catch (error) {
       logger.info(logger.yellow(`可忽略的警告`));
       logger.info(
@@ -212,7 +213,7 @@ export default new (class Init {
           fs.readFileSync(`./plugins/${PluginName_en}/package.json`, `utf-8`),
         );
         PluginAuthor = PluginAuthor.author;
-        global.PluginAuthor = PluginAuthor;
+        global.XINGLUO.PluginAuthor = PluginAuthor;
       } catch (error) {
         logger.info(logger.red(`出现错误！`));
         logger.info(
@@ -220,7 +221,7 @@ export default new (class Init {
           logger.white(`本地获取作者信息失败:`),
           logger.red(`${error}`),
         );
-        global.PluginAuthor = `未知作者-` + PluginVersion;
+        global.XINGLUO.PluginAuthor = `未知作者-` + (global.XINGLUO.PluginVersion || "unknown");
       }
     }
   }
@@ -232,15 +233,15 @@ export default new (class Init {
     try {
       let Hitokoto = await fetch(api[0]).then((res) => res.json());
       Hitokoto = Hitokoto.hitokoto;
-      global.BotHitokoto = Hitokoto;
+      global.XINGLUO.BotHitokoto = Hitokoto;
     } catch (error) {
       try {
         let Hitokoto = await fetch(api[1]).then((res) => res.json());
         Hitokoto = Hitokoto.hitokoto;
-        global.BotHitokoto = Hitokoto;
+        global.XINGLUO.BotHitokoto = Hitokoto;
       } catch (error) {
         logger.info(logger.blue(`全局随机一言获取失败`));
-        global.BotHitokoto = "";
+        global.XINGLUO.BotHitokoto = "";
       }
     }
   }
