@@ -4,7 +4,7 @@
 [![Security Status](https://www.murphysec.com/platform3/v31/badge/1918466541234647040.svg)](https://www.murphysec.com/console/report/1918466541050097664/1918466541234647040)
  </div>
 
-> QQ交流群:[727556008](https://qm.qq.com/cgi-bin/qm/qr?k=LTxwztTEZyjbE-ccpf2xsIT58alGMJMh&jump_from=webapi&authKey=0i4oR6aRVz9us5y3ghnA5dQGWTYPt4H/p4rLa9wLizaL+KLBx+51gd8+bJcu/uml)
+> QQ交流群:[727556008](https://qm.qq.com/cgi-bin/qm/qr?k=LTxwztTEZyjbE-ccpf2xsIT58alGMJMh&jump_from=webapi&authKey=0i4oR6aRVz9us5y3ghnA5dQGWTYPt4H/p4rLa9wLizaL+KLBx+51gd8+bJcu/uml)密码:星落落落落
 
 # 插件功能
 ## 功能命令与描述
