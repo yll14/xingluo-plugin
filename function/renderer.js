@@ -30,7 +30,7 @@ export default async function (path, params, cfg) {
     sys: {
       scale: `style=transform:scale(${cfg.scale || 1})`,
       copyright: `Yunzai-Bot<span class="version">${Version.yunzai}</span> & ${PluginName_zh}<span class="version">${lobal.XINGLUO.PluginVersion}</span>&
-        ${PluginAuthor}`,
+        ${lobal.XINGLUO.PluginAuthor}`,
     },
     quality: 100,
   };
