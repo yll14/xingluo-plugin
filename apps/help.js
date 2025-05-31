@@ -87,11 +87,11 @@ export class xingluoHelp extends plugin {
   async DailyHotType(e) {
     let config = {};
     let configFolder = `${PluginPath}/config`;
-    const DailyHotFilePath = `${configFolder}/DailyHot.yaml`;
+    const DailyHotFilePath = `${configFolder}/DailyHotType.yaml`;
     if (fs.existsSync(DailyHotFilePath)) {
       logger.info(
         logger.green(
-          `[${PluginName_en}]:config中存在DailyHot.yaml配置文件，已从/config文件夹中读取`,
+          `[${PluginName_en}]:config中存在DailyHotType.yaml配置文件，已从/config文件夹中读取`,
         ),
       );
       let { config } = GetConfig(`config`, `DailyHotType`);
