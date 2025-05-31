@@ -1,10 +1,10 @@
 <div align="center">
 
-# [星落插件](https://blog.yll14.cn/docs/xingluo) V6.5_5.10优化版(xingluo-plugin)
+# [星落插件](https://blog.yll14.cn/docs/xingluo) V6.5(xingluo-plugin)
 [![Security Status](https://www.murphysec.com/platform3/v31/badge/1918466541234647040.svg)](https://www.murphysec.com/console/report/1918466541050097664/1918466541234647040)
  </div>
 
-> QQ交流群:[727556008](https://qm.qq.com/cgi-bin/qm/qr?k=LTxwztTEZyjbE-ccpf2xsIT58alGMJMh&jump_from=webapi&authKey=0i4oR6aRVz9us5y3ghnA5dQGWTYPt4H/p4rLa9wLizaL+KLBx+51gd8+bJcu/uml)密码:星落落落落
+> QQ交流群:[727556008](https://qm.qq.com/cgi-bin/qm/qr?k=LTxwztTEZyjbE-ccpf2xsIT58alGMJMh&jump_from=webapi&authKey=0i4oR6aRVz9us5y3ghnA5dQGWTYPt4H/p4rLa9wLizaL+KLBx+51gd8+bJcu/uml)
 
 # 插件功能
 ## 功能命令与描述
@@ -77,11 +77,13 @@ pnpm i
 如果可以的话 给本项目个star 来支持本项目 您的支持就是给我的最大的鼓励 谢谢
 
 ## 鸣谢 
->  **_不分先后顺序_**
 
 | 贡献人名单 | 类型 | 备注 |
 | :----: | :----: | :----: |
+| [@维拉](https://gitee.com/com190238) | 技术支持 | 维拉喵~ |
 | 原来是原 | 微信赞助 | 金额:23.33元 |
+| 原来是原 | 微信赞助 | 金额:28.88元 |
+
 
 
 
