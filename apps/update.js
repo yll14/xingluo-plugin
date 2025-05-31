@@ -51,9 +51,7 @@ export class xingluoUpdate extends plugin {
     return true;
   }
 
-  restart() {
-    new Restart(this.e).restart();
-  }
+  
 
   /**
    * xingluo-plugin更新函数
@@ -86,14 +84,14 @@ export class xingluoUpdate extends plugin {
     if (/(Already up[ -]to[ -]date|已经是最新的)/.test(ret.stdout)) {
       await this.reply(`${PluginName_en}已经是最新版本\n最后更新时间：${time}`);
     } else {
-      await this.reply(`${PluginName_en}\n最后更新时间：${time}`);
+      await this.reply(`${PluginName_en}\n最后更新时间：${time}\nTips:为防止Bot因更新重启影响使用，请在闲时手动重启Bot`);
       /** 获取更新日志 */
       let log = await this.getLog(PluginName_en);
       await this.reply(log);
       setTimeout(() => this.restart(), 1000);
     }
 
-    logger.mark(`${this.e.logFnc} 最后更新时间：${time}`);
+    logger.mark(`${this.e.logFnc} 最后更新时间：${time} Tip:为防止Bot因更新重启影响使用，请在闲时手动重启Bot`);
 
     return true;
   }
@@ -132,14 +130,20 @@ export class xingluoUpdate extends plugin {
 
     let end = "";
     end = `更多详细信息，请前往gitee查看\nhttps://gitee.com/yll14/${PluginName_en}`;
+    let resmsg = "";
+    resmsg = `为了防止Bot因更新重启影响使用，请在闲时手动重启Bot`;
 
     log = await this.makeForwardMsg(
       `${PluginName_zh}插件更新日志，共${line}条`,
       log,
       end,
+      resmsg,
     );
 
     return log;
+  }
+  restart() {
+    new Restart(this.e).restart();
   }
 
   /**
